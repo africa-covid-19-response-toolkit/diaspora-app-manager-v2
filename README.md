@@ -1,8 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Diaspora App Manager
+
+## Web Setup for Firebase
+> <img src="src/assets/FindFirebaseConfig.png" alt="An image showing how to find the config on the firebase console." />
+
+- On the Firebase console, add a new web application and enter your projects details.
+- Got to Firebase Projects settings and select your web app.
+- From the Firebase SDK snippet, select `Config` options.
+- Copy the Firebase config and add it to following location `/src/api/firebase/config/index.js`
+
+```JavaScript
+  const firebaseConfig = {
+    apiKey: "xxx",
+    authDomain: "xxx",
+    databaseURL: "xxx",
+    projectId: "xxx",
+    storageBucket: "xxx",
+    messagingSenderId: "xxx",
+    appId: "xxx",
+    measurementId: "xxx"
+  };
+```
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+To install the dependencies required to run this app in the `node_modules` folder.
 
 ### `yarn start`
 
