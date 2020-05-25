@@ -1,7 +1,15 @@
 import React, { Component, Fragment } from "react";
 import { Modal, Button, Checkbox } from 'antd';
+import styled from "styled-components";
 
-export const termsAndConditions = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
+const termsAndConditions = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
+
+const Link = styled(Button)`
+  border: none !important;
+  padding: 5px;
+  color: #39b5fb; 
+`;
+Link.displayName = "Link";
 
 class TermsAndConditions extends Component {
   state = {
@@ -41,7 +49,7 @@ class TermsAndConditions extends Component {
       <Fragment>
         <Checkbox>
           I have read the 
-          <Button onClick={this.showModal}> terms and conditions</Button>
+          <Link onClick={this.showModal}> terms and conditions</Link>
         </Checkbox>
         <Modal
           title="Terms and Conditions"
