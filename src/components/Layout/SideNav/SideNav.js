@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { Layout, Menu } from 'antd';
 import { Link } from "react-router-dom";
 import {SIDE_NAV_CONFIG} from "./SideNavConfig";
-import SignOutModal from "../../Auth/SignOut/SignOutModal";
 
 const { Item } = Menu; 
 const { Sider } = Layout;
