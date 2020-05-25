@@ -19,6 +19,7 @@ jobs:
       - run:
           name: 'Build Project'
           command: 'yarn build'
+      - run: `yarn add firebase-tools --dev`
       - run:
           name: 'Deploy to Firebase Hosting'
           command: 'firebase deploy --token=$FIREBASE_TOKEN'
