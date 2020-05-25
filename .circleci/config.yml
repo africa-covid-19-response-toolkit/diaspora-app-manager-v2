@@ -32,7 +32,7 @@ jobs:
       - image: 'circleci/node:lts'
     steps:
       - attach_workspace:
-          at: /tmp/workspace
+          at: .
       - firebase-deploy/deploy:
           token: $FIREBASE_TOKEN
 workflows:
