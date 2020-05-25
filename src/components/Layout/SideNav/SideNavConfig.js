@@ -19,7 +19,7 @@ const SIDE_NAV_CONFIG = {
     DASHBOARD: {
         icon: <HomeOutlined />, 
         name: SCREEN_NAMES.DASHBOARD, 
-        path: "/"
+        path: "/dashboard"
     }, 
     MESSAGES: {
         icon: <MailOutlined />, 
