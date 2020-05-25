@@ -17,29 +17,29 @@ const SCREEN_NAMES = {
  
 const SIDE_NAV_CONFIG = {
     DASHBOARD: {
-        key: "1", 
         icon: <HomeOutlined />, 
-        name: SCREEN_NAMES.DASHBOARD
+        name: SCREEN_NAMES.DASHBOARD, 
+        path: "/dashboard"
     }, 
     MESSAGES: {
-        key: "2", 
         icon: <MailOutlined />, 
-        name: SCREEN_NAMES.MESSAGES
+        name: SCREEN_NAMES.MESSAGES,
+        path: "/messages"
     },
     QUESTIONS: {
-        key: "3", 
         icon: <QuestionCircleOutlined />, 
-        name: SCREEN_NAMES.QUESTIONS
+        name: SCREEN_NAMES.QUESTIONS, 
+        path: "/questions"
     }, 
     SETTINGS: {
-        key: "4", 
         icon: <SettingOutlined />,
-        name: SCREEN_NAMES.SETTINGS
+        name: SCREEN_NAMES.SETTINGS, 
+        path: "/settings"
     },
     SIGN_OUT: {
-        key: "5", 
         icon: <LogoutOutlined />,
-        name: SCREEN_NAMES.SIGN_OUT
+        name: SCREEN_NAMES.SIGN_OUT, 
+        path: "/sign_out"
     }
 };
 

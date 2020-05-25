@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Layout, Menu } from 'antd';
+import { Link } from "react-router-dom";
 import {SIDE_NAV_CONFIG} from "./SideNavConfig";
 
 const { Item } = Menu; 
@@ -7,7 +8,6 @@ const { Sider } = Layout;
 const INITIAL_COLLAPSE_STATE = false;
 
 const SideNav = () => {
-
     const [collapsed, setCollapsed] = useState(INITIAL_COLLAPSE_STATE);
 
     const handleCollapse = () => {
@@ -16,13 +16,19 @@ const SideNav = () => {
 
     const renderMenu = () => {
         return (
-            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+            <Menu 
+                theme="dark" 
+                defaultSelectedKeys={['/']} 
+                // selectedKeys={[location.pathname]}
+                mode="inline">
                 {Object.keys(SIDE_NAV_CONFIG).map((currentMenuItem) => {
-                    const {key, icon, name} = SIDE_NAV_CONFIG[currentMenuItem];
+                    const {icon, name, path} = SIDE_NAV_CONFIG[currentMenuItem];
                     return (
-                    <Item key={key} icon={icon}>
-                        {name}
-                    </Item>
+                        <Item key={path} icon={icon}>
+                            <Link to={path}>
+                                {name}
+                            </Link>
+                        </Item>
                     )
                 })}
             </Menu>
@@ -30,12 +36,20 @@ const SideNav = () => {
     };
 
     return(
-        <Layout style={{ minHeight: '100vh' }}>
-            <div className="logo" />
-             <Sider collapsible collapsed={collapsed} onCollapse={handleCollapse}>
-                {renderMenu()}
-             </Sider>
-        </Layout>
+        <Sider 
+            collapsible 
+            collapsed={collapsed} 
+            onCollapse={handleCollapse}
+            style={{
+                overflow: "auto",
+                height: "100vh",
+                position: "sticky",
+                top: 0,
+                left: 0
+            }}
+        >
+            {renderMenu()}
+        </Sider>
     )
 };
 
