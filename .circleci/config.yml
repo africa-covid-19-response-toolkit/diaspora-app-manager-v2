@@ -22,11 +22,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - build
-            - firebase.json
-            - .firebaserc
-            - firestore.rules
-            - firestore.indexes.json
+            - .
   deploy:
     docker:
       - image: 'circleci/node:lts'
