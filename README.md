@@ -1,6 +1,7 @@
 # Diaspora App Manager
 
-## Web Setup for Firebase
+## Firebase
+### Web Setup
 > <img src="src/assets/FindFirebaseConfig.png" alt="An image showing how to find the config on the firebase console." />
 
 - On the Firebase console, add a new web application and enter your projects details.
@@ -20,6 +21,9 @@
     measurementId: "xxx"
   };
 ```
+
+### Deployment
+To deploy the app in your terminal, run `firebase deploy`.
 
 ## Available Scripts
 
