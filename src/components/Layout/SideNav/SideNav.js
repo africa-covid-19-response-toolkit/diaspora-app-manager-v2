@@ -1,13 +1,8 @@
 import React, {useState} from 'react';
 import { Layout, Menu } from 'antd';
-import {
-    HomeOutlined,
-    MailOutlined,
-    QuestionCircleOutlined,
-    SettingOutlined,
-    LogoutOutlined
-  } from '@ant-design/icons';
+import SideNavConfig from "./SideNavConfig";
 
+const { Item } = Menu; 
 const { Sider } = Layout;
 const INITIAL_COLLAPSE_STATE = false;
 
@@ -22,21 +17,14 @@ const SideNav = () => {
     const renderMenu = () => {
         return (
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                <Menu.Item key="1" icon={<HomeOutlined />}>
-                    Dashboard
-                </Menu.Item>
-                <Menu.Item key="2" icon={<MailOutlined />}>
-                    Messages
-                </Menu.Item>
-                <Menu.Item key="3" icon={<QuestionCircleOutlined />}>
-                    Questions
-                </Menu.Item>
-                <Menu.Item key="4" icon={<SettingOutlined />}> 
-                    Settings
-                </Menu.Item>
-                <Menu.Item key="5" icon={<LogoutOutlined />}> 
-                    Sign out
-                </Menu.Item>
+                {Object.keys(SideNavConfig).map((currentMenuItem) => {
+                    const {key, icon, name} = SideNavConfig[currentMenuItem];
+                    return (
+                    <Item key={key} icon={icon}>
+                        {name}
+                    </Item>
+                    )
+                })}
             </Menu>
         )
     };
