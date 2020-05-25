@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Layout, Menu } from 'antd';
-import SideNavConfig from "./SideNavConfig";
+import {SIDE_NAV_CONFIG} from "./SideNavConfig";
 
 const { Item } = Menu; 
 const { Sider } = Layout;
@@ -17,8 +17,8 @@ const SideNav = () => {
     const renderMenu = () => {
         return (
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                {Object.keys(SideNavConfig).map((currentMenuItem) => {
-                    const {key, icon, name} = SideNavConfig[currentMenuItem];
+                {Object.keys(SIDE_NAV_CONFIG).map((currentMenuItem) => {
+                    const {key, icon, name} = SIDE_NAV_CONFIG[currentMenuItem];
                     return (
                     <Item key={key} icon={icon}>
                         {name}
