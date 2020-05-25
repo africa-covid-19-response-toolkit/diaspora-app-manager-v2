@@ -25,6 +25,8 @@
 ### Deployment
 To deploy the app in your terminal, run `firebase deploy`.
 
+View the web application at https://ecrt-tracker.web.app/.
+
 ## Available Scripts
 
 In the project directory, you can run:
