@@ -39,7 +39,7 @@ const SIDE_NAV_CONFIG = {
     SIGN_OUT: {
         icon: <LogoutOutlined />,
         name: SCREEN_NAMES.SIGN_OUT, 
-        path: "/sign_out"
+        path: "/signed_out"
     }
 };
 
