@@ -3,9 +3,9 @@ import {
     HomeOutlined,
     MailOutlined,
     QuestionCircleOutlined,
-    SettingOutlined,
-    LogoutOutlined
+    SettingOutlined
 } from '@ant-design/icons';
+import SignOutModal from "../../Auth/SignOut/SignOutModal";
 
 const SCREEN_NAMES = {
     DASHBOARD: "Dashboard", 
@@ -37,9 +37,7 @@ const SIDE_NAV_CONFIG = {
         path: "/settings"
     },
     SIGN_OUT: {
-        icon: <LogoutOutlined />,
-        name: SCREEN_NAMES.SIGN_OUT, 
-        path: "/sign_out"
+        modal: <SignOutModal />,
     }
 };
 

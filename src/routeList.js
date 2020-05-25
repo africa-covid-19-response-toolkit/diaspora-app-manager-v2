@@ -7,12 +7,12 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Messages from "./components/Messages/Messages";
 import Questions from "./components/Questions/Questions";
 import Settings from "./components/Settings/Settings";
-import SignOut from "./components/Auth/SignOut";
+import SignedOut from "./components/Auth/SignOut/SignedOut";
 
 const publicRoutes = [
     <Route exact path="/" render={props => <SignIn {...props} />} />,
     <Route exact path="/forgot_password" render={props => <ForgotPassword {...props} />} />,
-    <Route exact path="/sign_up" render={props => <SignUp {...props} />} />
+    <Route exact path="/signup" render={props => <SignUp {...props} />} />
 ];
   
 const restrictedRoutes = [
@@ -20,7 +20,7 @@ const restrictedRoutes = [
     <Route path="/messages" render={props => <Messages {...props} />} />,
     <Route path="/questions" render={props => <Questions {...props} />} />,
     <Route path="/settings" render={props => <Settings {...props} />} />,
-    <Route path="/sign_out" render={props => <SignOut {...props} />} />
+    <Route path="/signed_out" render={props => <SignedOut {...props} />} />
 ];
 
 export { publicRoutes, restrictedRoutes };
