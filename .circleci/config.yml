@@ -20,7 +20,7 @@ jobs:
           name: Build Project
           command: yarn build
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: .
           paths:
             - dist
             - firebase.json
