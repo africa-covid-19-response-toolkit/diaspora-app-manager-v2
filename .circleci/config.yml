@@ -20,15 +20,15 @@ jobs:
           name: Build Project
           command: yarn build
       - persist_to_workspace:
-          root: .
+          root: ./
           paths:
-            - .
+            - ./
   deploy:
     docker:
       - image: 'circleci/node:lts'
     steps:
       - attach_workspace:
-          at: .
+          at: ./
       - firebase-deploy/deploy:
           token: $FIREBASE_TOKEN
 workflows:
