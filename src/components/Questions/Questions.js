@@ -8,7 +8,7 @@ class Questions extends Component {
   render() {
     return (
       <div>
-       <h1>Questions</h1>
+        <h1>Questions</h1>
       </div>
     )
   }

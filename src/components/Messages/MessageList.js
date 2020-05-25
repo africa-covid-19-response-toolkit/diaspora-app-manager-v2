@@ -8,7 +8,7 @@ class MessageList extends Component {
   render() {
     return (
       <div>
-       <h1>MessageList</h1>
+        <h1>MessageList</h1>
       </div>
     )
   }
