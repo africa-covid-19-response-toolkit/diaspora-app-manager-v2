@@ -48,8 +48,7 @@ class TermsAndConditions extends Component {
     return (
       <Fragment>
         <Checkbox>
-          I have read the 
-          <Link onClick={this.showModal}> terms and conditions</Link>
+          I have read the <Link onClick={this.showModal}> terms and conditions</Link>
         </Checkbox>
         <Modal
           title="Terms and Conditions"

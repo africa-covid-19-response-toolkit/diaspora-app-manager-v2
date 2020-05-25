@@ -2,6 +2,8 @@ import React from 'react';
 import { Form, Input, Button } from 'antd';
 import TermsAndConditions from "./TermsAndConditions";
 
+const { Item } = Form; 
+
 const SignUp = () => {
   const [form] = Form.useForm();
 
@@ -16,7 +18,7 @@ const SignUp = () => {
       onFinish={onFinish}
       scrollToFirstError
     >
-      <Form.Item
+      <Item
         name="email"
         label="E-mail"
         rules={[
@@ -31,9 +33,9 @@ const SignUp = () => {
         ]}
       >
         <Input />
-      </Form.Item>
+      </Item>
 
-      <Form.Item
+      <Item
         name="password"
         label="Password"
         rules={[
@@ -45,9 +47,9 @@ const SignUp = () => {
         hasFeedback
       >
         <Input.Password />
-      </Form.Item>
+      </Item>
 
-      <Form.Item
+      <Item
         name="confirm"
         label="Confirm Password"
         dependencies={['password']}
@@ -69,9 +71,9 @@ const SignUp = () => {
         ]}
       >
         <Input.Password />
-      </Form.Item>
+      </Item>
 
-      <Form.Item
+      <Item
         name="agreement"
         valuePropName="checked"
         rules={[
@@ -82,12 +84,14 @@ const SignUp = () => {
         ]}
       >
         <TermsAndConditions />
-      </Form.Item>
-      <Form.Item >
+      </Item>
+
+      <Item >
         <Button type="primary" htmlType="submit">
           Register
         </Button>
-      </Form.Item>
+      </Item>
+      
     </Form>
   );
 };
