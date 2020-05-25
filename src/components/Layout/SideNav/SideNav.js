@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Layout, Menu } from 'antd';
 import { Link } from "react-router-dom";
 import {SIDE_NAV_CONFIG} from "./SideNavConfig";
+import SignOutModal from "../../Auth/SignOut/SignOutModal";
 
 const { Item } = Menu; 
 const { Sider } = Layout;
@@ -19,16 +20,19 @@ const SideNav = () => {
             <Menu 
                 theme="dark" 
                 defaultSelectedKeys={['/']} 
-                // selectedKeys={[location.pathname]}
-                mode="inline">
+                mode="inline"
+            >
                 {Object.keys(SIDE_NAV_CONFIG).map((currentMenuItem) => {
-                    const {icon, name, path} = SIDE_NAV_CONFIG[currentMenuItem];
-                    return (
-                        <Item key={path} icon={icon}>
-                            <Link to={path}>
-                                {name}
-                            </Link>
-                        </Item>
+                    const {icon, name, path, modal} = SIDE_NAV_CONFIG[currentMenuItem];
+                    return( 
+                        modal ?
+                           modal
+                        : 
+                            <Item key={path} icon={icon}>
+                                <Link to={path}>
+                                    {name}
+                                </Link>
+                            </Item>
                     )
                 })}
             </Menu>
