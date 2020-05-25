@@ -31,6 +31,7 @@ jobs:
           at: ./
       - firebase-deploy/deploy:
           token: $FIREBASE_TOKEN
+          
 workflows:
   build-and-deploy:
     jobs:
