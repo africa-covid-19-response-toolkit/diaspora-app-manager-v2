@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Form,
-  Input,
-  Checkbox,
-  Button
-} from 'antd';
+import { Form, Input, Button } from 'antd';
 import TermsAndConditions from "./TermsAndConditions";
 
 const SignUp = () => {
