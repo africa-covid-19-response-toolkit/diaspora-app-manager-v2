@@ -29,4 +29,4 @@ jobs:
           command: 'yarn add firebase-tools --dev'
       - run:
           name: 'Deploy to Firebase Hosting'
-          command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
+          command: './node_modules/.bin/firebase deploy --token=FIREBASE_TOKEN'
