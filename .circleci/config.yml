@@ -20,7 +20,7 @@ jobs:
             - ./node_modules
       - run:
           name: test
-          command: npm run test-nowatch
+          command: yarn test
   deploy: # deploy script
     working_directory: ~/repository
     docker:
