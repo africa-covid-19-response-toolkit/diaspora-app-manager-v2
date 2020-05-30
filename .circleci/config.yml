@@ -1,41 +1,59 @@
-version: 2.1
-orbs:
-  firebase-deploy: azdevs/firebase-deploy@1.0.0
+version: 2.0
 jobs:
   build:
+    working_directory: ~/repository
     docker:
-      - image: 'circleci/node:lts'
+      - image: circleci/node:10.16.3
     steps:
       - checkout
+      - run:
+          name: Update NPM
+          command: 'sudo npm install -g npm@latest'
       - restore_cache:
-          key: 'v1-yarn-{{ checksum "yarn.lock" }}'
-      - run: 
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
           name: Install Dependencies
-          command: yarn install
+          command: npm install
       - save_cache:
-          key: 'v1-yarn-{{ checksum "yarn.lock" }}'
+          key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run: 
-          name: Build Project
-          command: yarn build
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - ~/
-  deploy:
+  deploy: 
+    working_directory: ~/repository
     docker:
-      - image: 'circleci/node:lts'
+      - image: circleci/node:10.16.3
     steps:
-      - attach_workspace:
-          at: ~/
-      - firebase-deploy/deploy:
-          token: $FIREBASE_TOKEN
-          
+      - checkout
+      - run:
+          name: Update NPM
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Build Application
+          command: npm run build
+      - run: 
+          name: Generate Firebaserc
+          command: cp .firebaserc.example .firebaserc
+      - run:
+          name: Modify Firebaserc Environment Variables
+          command: sed -i "s/\[YOUR\-PROJECT\-ID\]/$FIREBASE_PROJECT_ID/g" .firebaserc
+      - run:
+          name: Deploy Application
+          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --only hosting
+
 workflows:
+  version: 2
   build-and-deploy:
     jobs:
-      - build
-      - deploy:
+      - build 
+      - deploy: 
           requires:
             - build
