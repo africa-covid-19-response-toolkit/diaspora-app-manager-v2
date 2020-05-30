@@ -7,12 +7,12 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update npm
+          name: Update NPM
           command: 'sudo npm install -g npm@latest'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Install dependencies
+          name: Install Dependencies
           command: npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
@@ -25,30 +25,28 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update npm
+          name: Update NPM
           command: 'sudo npm install -g npm@latest'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Install dependencies
+          name: Install Dependencies
           command: npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
       - run:
-          name: Build application
+          name: Build Application
           command: npm run build
       - run: 
-          # make  copy of .firebaserc
-          name: Generate firebaserc
+          name: Generate Firebaserc
           command: cp .firebaserc.example .firebaserc
       - run:
-           # modify .firebaserc with env variable
-          name: Modify environment variables in firebaserc
+          name: Modify Firebaserc Environment Variables
           command: sed -i "s/\[YOUR\-PROJECT\-ID\]/$FIREBASE_PROJECT_ID/g" .firebaserc
       - run:
-          name: Deploy app
+          name: Deploy Application
           command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --only hosting
 
 workflows:
@@ -59,6 +57,6 @@ workflows:
       - deploy: 
           requires:
             - build
-          filters: # only for the master branch
+          filters: 
             branches:
               only: master
