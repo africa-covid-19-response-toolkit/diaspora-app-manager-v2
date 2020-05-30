@@ -1,20 +1,8 @@
 import React from 'react';
-import { Layout } from 'antd';
-
-const { Content } = Layout;
 
 const GlobalContent = ({children}) => { 
   return (
-    <Content
-      style={{
-        margin: '24px 16px',
-        padding: 24,
-        background: '#fff',
-        minHeight: 400,
-      }}
-    >
-      {children}
-    </Content>
+    <h1>{children}</h1>
   );
 };
 
