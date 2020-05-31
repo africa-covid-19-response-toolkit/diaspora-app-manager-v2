@@ -1,11 +1,6 @@
 import React from "react";
-import {
-    HomeOutlined,
-    MailOutlined,
-    QuestionCircleOutlined,
-    SettingOutlined
-} from '@ant-design/icons';
-import SignOutModal from "../../Auth/SignOut/SignOutModal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faComment, faQuestion, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 const SCREEN_NAMES = {
     DASHBOARD: "Dashboard", 
@@ -17,27 +12,29 @@ const SCREEN_NAMES = {
  
 const SIDE_NAV_CONFIG = {
     DASHBOARD: {
-        icon: <HomeOutlined />, 
+        icon: <FontAwesomeIcon icon={faHome} />, 
         name: SCREEN_NAMES.DASHBOARD, 
         path: "/dashboard"
     }, 
     MESSAGES: {
-        icon: <MailOutlined />, 
+        icon:<FontAwesomeIcon icon={faComment} />,
         name: SCREEN_NAMES.MESSAGES,
         path: "/messages"
     },
     QUESTIONS: {
-        icon: <QuestionCircleOutlined />, 
+        icon: <FontAwesomeIcon icon={faQuestion} />, 
         name: SCREEN_NAMES.QUESTIONS, 
         path: "/questions"
     }, 
     SETTINGS: {
-        icon: <SettingOutlined />,
+        icon: <FontAwesomeIcon icon={faCog} />,
         name: SCREEN_NAMES.SETTINGS, 
         path: "/settings"
     },
     SIGN_OUT: {
-        modal: <SignOutModal />,
+        icon: <FontAwesomeIcon icon={faSignOutAlt} />,
+        name: SCREEN_NAMES.SIGN_OUT, 
+        path: "/signed_out"
     }
 };
 
