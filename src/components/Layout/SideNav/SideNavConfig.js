@@ -34,7 +34,8 @@ const SIDE_NAV_CONFIG = {
     SIGN_OUT: {
         icon: <FontAwesomeIcon icon={faSignOutAlt} />,
         name: SCREEN_NAMES.SIGN_OUT, 
-        path: "/signed_out"
+        path: "/signed_out", 
+        modal: true
     }
 };
 

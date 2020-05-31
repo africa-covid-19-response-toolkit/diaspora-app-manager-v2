@@ -1,16 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Redirect } from "react-router-dom";
-import { Modal, Button } from 'antd';
-import { LogoutOutlined } from '@ant-design/icons';
-import styled from "styled-components";
-
-const MenuButton = styled(Button)`
-  margin-left: 10px;
-  color: #afb6bb; 
-  :hover {
-    color: red !important;
-  }
-`;
+import { VerticalItem, Modal, Button } from 'react-rainbow-components';
 
 class SignOutModal extends Component {
   constructor() {
@@ -27,7 +17,7 @@ class SignOutModal extends Component {
     });
   };
 
-  handleOk = e => {
+  handleConfirm = e => {
     console.log("Signing out");
     this.setState({
       visible: false,
@@ -44,21 +34,33 @@ class SignOutModal extends Component {
 
   render() {
     const { redirect } = this.state;
+    const {name, icon} = this.props;
     return(
       redirect ? 
         <Redirect to="/signed_out" />
       : 
-        <Fragment>
-          <MenuButton type="link" icon={<LogoutOutlined />} onClick={this.showModal}>
-            Sign out
-          </MenuButton>
-          <Modal
-              visible={this.state.visible}
-              onOk={this.handleOk}
-              onCancel={this.handleCancel}
-          >
-            Are you sure you want to sign out?
-          </Modal>
+      <Fragment>
+        <VerticalItem
+            name={name} 
+            label={name}
+            icon={icon}
+            onClick={this.showModal}
+        />
+        <Modal   
+          isOpen={this.state.visible}
+          onRequestClose={this.handleCancel}
+          title="Are you sure you want to exit?"
+        >
+          <section className="rainbow-flex rainbow-justify_end">
+              <Button
+                  className="rainbow-m-right_large"
+                  label="No"
+                  variant="destructive"
+                  onClick={this.handleCancel}
+              />
+              <Button label="Yes" variant="success" onClick={this.handleConfirm} />
+          </section>
+            </Modal>
         </Fragment>
       )
   };
