@@ -1,9 +1,12 @@
-import React from 'react';
-import GlobalContent from "./GlobalContent";
+import React, {Fragment} from 'react';
+import SideNav from "./SideNav/SideNav";
 
 const GlobalLayout = ({children}) => {
     return(
-        <GlobalContent>{children}</GlobalContent>
+        <Fragment>
+            <SideNav />
+            {children}
+        </Fragment>
     )
 };
 

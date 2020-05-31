@@ -1,58 +1,49 @@
 import React, {useState} from 'react';
-import { Layout, Menu } from 'antd';
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
 import {SIDE_NAV_CONFIG} from "./SideNavConfig";
+import { VerticalNavigation, VerticalSection, VerticalItem } from 'react-rainbow-components';
 
-const { Item } = Menu; 
-const { Sider } = Layout;
-const INITIAL_COLLAPSE_STATE = false;
+const SideNavContainer = styled.section`
+    padding-top: 10px;
+    background: black;    
+    min-height: 100vh;
+    width: 220px;
+    font-weight: bold;
+`;
+SideNavContainer.displayName = "SideNavContainer";
+
+const INITIAL_SELECTED_ITEM = "dashboard";
 
 const SideNav = () => {
-    const [collapsed, setCollapsed] = useState(INITIAL_COLLAPSE_STATE);
-
-    const handleCollapse = () => {
-        setCollapsed(!collapsed)
-    };
+    const [selectedItem, setSelectedItem] = useState(INITIAL_SELECTED_ITEM);
 
     const renderMenu = () => {
         return (
-            <Menu 
-                theme="dark" 
-                defaultSelectedKeys={['/']} 
-                mode="inline"
+            <VerticalNavigation
+                selectedItem={selectedItem}
+                onSelect={setSelectedItem}
             >
-                {Object.keys(SIDE_NAV_CONFIG).map((currentMenuItem) => {
-                    const {icon, name, path, modal} = SIDE_NAV_CONFIG[currentMenuItem];
-                    return( 
-                        modal ?
-                           modal
-                        : 
-                            <Item key={path} icon={icon}>
-                                <Link to={path}>
-                                    {name}
-                                </Link>
-                            </Item>
-                    )
-                })}
-            </Menu>
+                <VerticalSection>
+                    {Object.keys(SIDE_NAV_CONFIG).map((currentMenuItem) => {
+                        const {icon, name, path} = SIDE_NAV_CONFIG[currentMenuItem];
+                        return(
+                            <VerticalItem
+                                name={name} 
+                                label={name}
+                                icon={icon}
+                                href={path}
+                            />
+                        )
+                    })}
+                </VerticalSection>
+            </VerticalNavigation>
         )
     };
 
     return(
-        <Sider 
-            collapsible 
-            collapsed={collapsed} 
-            onCollapse={handleCollapse}
-            style={{
-                overflow: "auto",
-                height: "100vh",
-                position: "sticky",
-                top: 0,
-                left: 0
-            }}
-        >
+        <SideNavContainer>
             {renderMenu()}
-        </Sider>
+        </SideNavContainer>  
     )
 };
 
