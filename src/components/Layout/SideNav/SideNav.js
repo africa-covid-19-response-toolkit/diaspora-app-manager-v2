@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import {SIDE_NAV_CONFIG} from "./SideNavConfig";
 import { VerticalNavigation, VerticalSection, VerticalItem } from 'react-rainbow-components';
+import SignOutModal from "../../Auth/SignOut/SignOutModal";
 
 const SideNavContainer = styled.section`
     padding-top: 10px;
@@ -25,14 +26,17 @@ const SideNav = () => {
             >
                 <VerticalSection>
                     {Object.keys(SIDE_NAV_CONFIG).map((currentMenuItem) => {
-                        const {icon, name, path} = SIDE_NAV_CONFIG[currentMenuItem];
+                        const {icon, name, path, modal} = SIDE_NAV_CONFIG[currentMenuItem];
                         return(
-                            <VerticalItem
-                                name={name} 
-                                label={name}
-                                icon={icon}
-                                href={path}
-                            />
+                            modal ?
+                                <SignOutModal name={name} icon={icon} path={path} />
+                            : 
+                                <VerticalItem
+                                    name={name} 
+                                    label={name}
+                                    icon={icon}
+                                    href={path}
+                                />
                         )
                     })}
                 </VerticalSection>
