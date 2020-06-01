@@ -1,14 +1,27 @@
-import React, {Component} from 'react'
-import ComingSoon from "../Layout/ComingSoon";
+import React, {Component} from "react";
+import { Application } from 'react-rainbow-components';
+import QuestionsCard from "./QuestionsCard";
+import { questionCardTheme } from "../../themes";
+import styled from "styled-components";
+
+const QuestionsContainer = styled(Application)`
+  display: flex;
+  justify-content: center; 
+  width: 100%;
+  margin: auto;
+`;
 
 class Questions extends Component {
   constructor() {
     super()
     this.state = {}
   }
+
   render() {
     return (
-      <ComingSoon />
+      <QuestionsContainer theme={questionCardTheme}>
+        <QuestionsCard />
+      </QuestionsContainer>
     )
   }
 }
