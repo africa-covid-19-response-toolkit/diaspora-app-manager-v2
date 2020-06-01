@@ -1,29 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
-import GlobalLayout from "./components/Layout/GlobalLayout";
-import {publicRoutes, restrictedRoutes} from "./routeList";
-import { Application } from 'react-rainbow-components';
 import styled from "styled-components";
+import {publicRoutes, restrictedRoutes} from "./routeList";
+import GlobalLayout from "./components/Layout/GlobalLayout";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 
-const AppContainer = styled(Application)`
+const AppContainer = styled.section`
     display: flex !important;
 `;
 AppContainer.displayName = "AppContainer";
 
-const theme = {
-  rainbow: {
-    palette: {
-      mainBackground: "#000000",
-      brand: "#fdd30b", 
-    },
-  },
-};
-
 const App = () => {
   return (
-    <AppContainer theme={theme}>
+    <AppContainer>
       <Router>
-       <GlobalLayout>
+        <GlobalLayout>
           <Switch>
             {restrictedRoutes}
             {publicRoutes}
