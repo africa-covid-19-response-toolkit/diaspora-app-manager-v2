@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import {sideNavTheme} from "../../../themes";
 import {SIDE_NAV_CONFIG} from "./SideNavConfig";
-import { VerticalNavigation, VerticalSection, VerticalItem } from 'react-rainbow-components';
 import SignOutModal from "../../Auth/SignOut/SignOutModal";
+import { Application, VerticalNavigation, VerticalSection, VerticalItem } from 'react-rainbow-components';
 
-const SideNavContainer = styled.section`
+const SideNavContainer = styled(Application)`
     padding-top: 10px;
     background: black;    
     min-height: 100vh;
@@ -45,7 +46,7 @@ const SideNav = () => {
     };
 
     return(
-        <SideNavContainer>
+        <SideNavContainer theme={sideNavTheme}>
             {renderMenu()}
         </SideNavContainer>  
     )
