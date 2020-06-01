@@ -7,7 +7,7 @@ const sideNavTheme = {
     },
   };
 
-const questionCardTheme = {
+const questionsTheme = {
     rainbow: {
         palette: {
         mainBackground: "#FFFFFF",
@@ -15,4 +15,4 @@ const questionCardTheme = {
     },
 };
 
-export {sideNavTheme, questionCardTheme}
+export {sideNavTheme, questionsTheme}
