@@ -14,7 +14,7 @@ const SideNavContainer = styled(Application)`
 `;
 SideNavContainer.displayName = "SideNavContainer";
 
-const INITIAL_SELECTED_ITEM = "dashboard";
+const INITIAL_SELECTED_ITEM = "questions";
 
 const SideNav = () => {
     const [selectedItem, setSelectedItem] = useState(INITIAL_SELECTED_ITEM);
