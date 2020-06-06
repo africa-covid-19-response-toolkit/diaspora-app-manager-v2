@@ -30,9 +30,15 @@ const SideNav = () => {
                         const {icon, name, path, modal} = SIDE_NAV_CONFIG[currentMenuItem];
                         return(
                             modal ?
-                                <SignOutModal name={name} icon={icon} path={path} />
+                                <SignOutModal 
+                                    key={path} 
+                                    name={name} 
+                                    icon={icon} 
+                                    path={path} 
+                                />
                             : 
                                 <VerticalItem
+                                    key={path}
                                     name={name} 
                                     label={name}
                                     icon={icon}
