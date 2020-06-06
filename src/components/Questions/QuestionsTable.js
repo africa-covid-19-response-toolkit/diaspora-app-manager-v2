@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import firebase from "../../api/firebase/firestore";
 import connectEmulatorToApp from "../../api/firebase/connect";
-import { Table, Column, MenuItem } from 'react-rainbow-components';
+import { Table, Column } from 'react-rainbow-components';
 
 const TableContainer = styled.section`
     justify-content: center;  
@@ -21,7 +21,7 @@ const filterQuestions = (questions) => {
   });
 };
 
-const QuestionsList = ({dispatch}) => {
+const QuestionsTable = ({dispatch}) => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
@@ -41,15 +41,6 @@ const QuestionsList = ({dispatch}) => {
       });
   }, []);
 
-  const renderTableActions = () => {
-    return(
-      <Column type="action">
-        <MenuItem label="Edit" onClick={(e, data) => console.log(`Edit`)} />
-        <MenuItem label="Delete" onClick={(e, data) => console.log(`Delete`)} />
-      </Column>
-    );
-  };
-
   const onSelect = (selectedRow) => {
     dispatch({
       type: 'SELECT_QUESTION',
@@ -63,13 +54,12 @@ const QuestionsList = ({dispatch}) => {
         data={questions} 
         maxRowSelection={1}
         showCheckboxColumn={true}
-        onRowSelection={onSelect} 
+        onRowSelection={onSelect}
         style={tableContainerStyles} 
         keyField="id"
       >
         <Column header="Question" field="id" />
         <Column header="Prompt" field="text.eng" />
-        {renderTableActions()}
     </Table>
   </TableContainer>
   )
@@ -88,4 +78,4 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionsList); 
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionsTable); 
