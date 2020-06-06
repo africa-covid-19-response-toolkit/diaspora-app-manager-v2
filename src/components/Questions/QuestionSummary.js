@@ -19,6 +19,17 @@ CardContainer.displayName = "CardContainer";
 
 const QuestionSummary = () => {
 
+    const renderIcon = () => {
+        return(
+            <span
+                className="rainbow-background-color_success rainbow-border-radius_circle rainbow-align-content_center"
+                style={iconContainerStyles}
+            >
+                <FontAwesomeIcon icon={faTasks} size="lg" className="rainbow-color_white" />
+            </span>
+        )
+    };
+
     const renderContent = () => {
         return(
             <section className="rainbow-p-around_xx-large rainbow-align-content_center rainbow-flex_column">
@@ -51,14 +62,7 @@ const QuestionSummary = () => {
     const renderCard = () => {
         return(
             <Card
-                icon={
-                    <span
-                        className="rainbow-background-color_success rainbow-border-radius_circle rainbow-align-content_center"
-                        style={iconContainerStyles}
-                    >
-                        <FontAwesomeIcon icon={faTasks} size="lg" className="rainbow-color_white" />
-                    </span>
-                }
+                icon={renderIcon()}
                 title="Question X"
                 actions={<Button variant="neutral" label="Edit" />}
                 footer={renderFooter()}
