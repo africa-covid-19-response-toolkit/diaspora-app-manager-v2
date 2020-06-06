@@ -109,7 +109,6 @@ const QuestionSummary = ({ questionSelected, dispatch }) => {
             <Card
                 icon={renderIcon()}
                 title={questionSelected ? `Question ${questionSelected.id}` : "Question"}
-                actions={<Button variant="neutral" label="Edit" />}
                 footer={renderFooter()}
             >
                 {renderContent()}
