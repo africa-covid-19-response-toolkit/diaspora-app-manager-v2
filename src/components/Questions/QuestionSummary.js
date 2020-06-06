@@ -55,24 +55,25 @@ const QuestionSummary = ({ questionSelected }) => {
     };
 
     const onEdit = (e) => {
+        console.log("Edited:\n", question);
         const editedQuestion = e.target.value;
         setQuestion(editedQuestion);
         
     };
 
     const renderQuestion = () => {
-        
         return(
-            <div className="rainbow-align-content_center rainbow-flex_wrap">
-            <Input 
-                label="Edit the question"
-                isCentered
-                onChange={onEdit}
-                style={containerStyles}
-                value={question}
-                bottomHelpText="ex: How many people have you been in contact with in the past 24 hours?"
-            />
-            </div>
+            <section className="rainbow-align-content_center rainbow-flex_wrap">
+                <Input 
+                    label="Edit the question"
+                    isCentered
+                    onChange={onEdit}
+                    style={containerStyles}
+                    value={question || ""}
+                    bottomHelpText="ex: How many people have you been in contact with in the past 24 hours?"
+                />
+                
+            </section>
         )
     };
 
