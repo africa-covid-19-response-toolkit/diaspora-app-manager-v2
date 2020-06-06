@@ -1,10 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import Rainbow from "../../assets/Rainbow.svg";
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Card, ButtonIcon, Button } from 'react-rainbow-components';
-import { faTasks, faShareAlt, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faTasks, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const iconContainerStyles = {
     width: '2.5rem',
@@ -29,8 +29,8 @@ const QuestionSummary = () => {
             </span>
         )
     };
-
-    const renderContent = () => {
+    
+    const renderZeroState = () => {
         return(
             <section className="rainbow-p-around_xx-large rainbow-align-content_center rainbow-flex_column">
                 <img
@@ -38,24 +38,21 @@ const QuestionSummary = () => {
                     alt="landscape with rainbows and colorful birds"
                 />
                 <h1 className="rainbow-p-top_large rainbow-font-size-heading_small">
-                    No questions found
+                    No question selected
                 </h1>
             </section>
         )
     };
 
+    const renderContent = () => {
+        return(
+           renderZeroState()
+        )
+    };
+
     const renderFooter = () => {
         return(
-            <section className="rainbow-align-content_space-between">
-                <section className="rainbow-flex">
-                    <ButtonIcon
-                        icon={<FontAwesomeIcon icon={faHeart} />}
-                        className="rainbow-m-right_xx-small"
-                    />
-                    <ButtonIcon icon={<FontAwesomeIcon icon={faShareAlt} />} />
-                </section>
-                <ButtonIcon icon={<FontAwesomeIcon icon={faAngleDown} />} />
-            </section>
+            <ButtonIcon icon={<FontAwesomeIcon icon={faAngleDown} />} />
         )
     };
 
@@ -79,4 +76,11 @@ const QuestionSummary = () => {
     )
 }
 
-export default QuestionSummary;
+const mapStateToProps = state => {
+    return { 
+      authenticated: state.authenticated,
+      questionSelected: state.questionSelected
+    }
+};
+
+export default connect(mapStateToProps)(QuestionSummary);
