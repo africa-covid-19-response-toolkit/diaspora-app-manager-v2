@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import Rainbow from "../../assets/Rainbow.svg";
+import QuestionActions from "./QuestionActions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Card, Button, Input } from 'react-rainbow-components';
 import { faTasks } from '@fortawesome/free-solid-svg-icons';
@@ -74,17 +75,19 @@ const QuestionSummary = ({ questionSelected, dispatch }) => {
 
     const renderQuestion = () => {
         return(
-            <section className="rainbow-align-content_center rainbow-flex_wrap">
-                <Input 
-                    label="Edit the question"
-                    isCentered
-                    onChange={onEdit}
-                    style={containerStyles}
-                    value={question || ""}
-                    bottomHelpText="ex: How many people have you been in contact with in the past 24 hours?"
-                />
-                
-            </section>
+            <Fragment>
+                <section className="rainbow-align-content_center rainbow-flex_wrap">
+                    <Input 
+                        label="Edit the question"
+                        isCentered
+                        onChange={onEdit}
+                        style={containerStyles}
+                        value={question || ""}
+                        bottomHelpText="ex: How many people have you been in contact with in the past 24 hours?"
+                    />
+                </section>
+                <QuestionActions />
+            </Fragment>
         )
     };
 
@@ -109,7 +112,6 @@ const QuestionSummary = ({ questionSelected, dispatch }) => {
             <Card
                 icon={renderIcon()}
                 title={questionSelected ? `Question ${questionSelected.id}` : "Question"}
-                actions={<Button variant="neutral" label="Edit" />}
                 footer={renderFooter()}
             >
                 {renderContent()}
