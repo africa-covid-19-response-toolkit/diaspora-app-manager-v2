@@ -93,8 +93,10 @@ const QuestionSummary = ({ questionSelected, dispatch }) => {
     };
 
     const renderFooter = () => {
+        const disabled = questionSelected ? false : true; 
         return(
             <Button
+                disabled={disabled}
                 label="Save"
                 variant="success"
                 onClick={onSave} 
