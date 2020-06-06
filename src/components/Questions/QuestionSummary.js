@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import Rainbow from "../../assets/Rainbow.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Card, ButtonIcon, Button } from 'react-rainbow-components';
+import { Card, ButtonIcon, Button, Input } from 'react-rainbow-components';
 import { faTasks, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const iconContainerStyles = {
@@ -11,13 +11,23 @@ const iconContainerStyles = {
     height: '2.5rem',
 };
 
+const containerStyles = {
+    maxWidth: 1000,
+};
+
 const CardContainer = styled.section`
     justify-content: center;  
-    width: 90%; 
+    width: 90%;
 `;
 CardContainer.displayName = "CardContainer";
 
-const QuestionSummary = () => {
+const QuestionSummary = ({ questionSelected }) => {
+    const [question, setQuestion] = useState("");
+
+    useEffect(() => {
+        const selectedQuestion = questionSelected ? questionSelected.text.eng : null;
+        setQuestion(selectedQuestion);
+    }, [questionSelected]);
 
     const renderIcon = () => {
         return(
@@ -44,10 +54,30 @@ const QuestionSummary = () => {
         )
     };
 
-    const renderContent = () => {
+    const onEdit = (e) => {
+        const editedQuestion = e.target.value;
+        setQuestion(editedQuestion);
+        
+    };
+
+    const renderQuestion = () => {
+        
         return(
-           renderZeroState()
+            <div className="rainbow-align-content_center rainbow-flex_wrap">
+            <Input 
+                label="Edit the question"
+                isCentered
+                onChange={onEdit}
+                style={containerStyles}
+                value={question}
+                bottomHelpText="ex: How many people have you been in contact with in the past 24 hours?"
+            />
+            </div>
         )
+    };
+
+    const renderContent = () => {
+        return questionSelected ? renderQuestion() : renderZeroState();
     };
 
     const renderFooter = () => {
@@ -60,7 +90,7 @@ const QuestionSummary = () => {
         return(
             <Card
                 icon={renderIcon()}
-                title="Question X"
+                title={questionSelected ? `Question ${questionSelected.id}` : "Question"}
                 actions={<Button variant="neutral" label="Edit" />}
                 footer={renderFooter()}
             >

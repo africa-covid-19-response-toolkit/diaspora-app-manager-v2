@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import firebase from "../../api/firebase/firestore";
 import connectEmulatorToApp from "../../api/firebase/connect";
-import { Table, Column, ButtonIcon } from 'react-rainbow-components';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons';
+import { Table, Column } from 'react-rainbow-components';
 
 const TableContainer = styled.section`
     justify-content: center;  
@@ -56,7 +54,7 @@ const QuestionsTable = ({dispatch}) => {
         data={questions} 
         maxRowSelection={1}
         showCheckboxColumn={true}
-        onRowSelection={onSelect} 
+        onRowSelection={onSelect}
         style={tableContainerStyles} 
         keyField="id"
       >
