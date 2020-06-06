@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import Rainbow from "../../assets/Rainbow.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -75,4 +76,11 @@ const QuestionSummary = () => {
     )
 }
 
-export default QuestionSummary;
+const mapStateToProps = state => {
+    return { 
+      authenticated: state.authenticated,
+      questionSelected: state.questionSelected
+    }
+};
+
+export default connect(mapStateToProps)(QuestionSummary);

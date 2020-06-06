@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import firebase from "../../api/firebase/firestore";
 import connectEmulatorToApp from "../../api/firebase/connect";
@@ -20,7 +21,7 @@ const filterQuestions = (questions) => {
   });
 };
 
-const QuestionsList = () => {
+const QuestionsList = ({dispatch}) => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
@@ -47,11 +48,25 @@ const QuestionsList = () => {
         <MenuItem label="Delete" onClick={(e, data) => console.log(`Delete`)} />
       </Column>
     );
-  }
+  };
+
+  const onSelect = (selectedRow) => {
+    dispatch({
+      type: 'SELECT_QUESTION',
+      selection: selectedRow[0] 
+    })
+  };
 
   return (
     <TableContainer>
-      <Table data={questions} style={tableContainerStyles} keyField="id">
+      <Table 
+        data={questions} 
+        maxRowSelection={1}
+        showCheckboxColumn={true}
+        onRowSelection={onSelect} 
+        style={tableContainerStyles} 
+        keyField="id"
+      >
         <Column header="Question" field="id" />
         <Column header="Prompt" field="text.eng" />
         {renderTableActions()}
@@ -60,4 +75,17 @@ const QuestionsList = () => {
   )
 }
 
-export default QuestionsList; 
+const mapStateToProps = state => {
+  return { 
+    authenticated: state.authenticated,
+    questionSelected: state.questionSelected
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    dispatch
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionsList); 
