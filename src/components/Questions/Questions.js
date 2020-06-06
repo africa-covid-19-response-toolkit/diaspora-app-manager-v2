@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import { questionsTheme } from "../../themes";
 import { Application } from 'react-rainbow-components';
 import QuestionSummary from "./QuestionSummary";
-import QuestionsList from "./QuestionsList";
+import QuestionsTable from "./QuestionsTable";
 import styled from "styled-components";
 
 const QuestionsContainer = styled(Application)`
@@ -24,7 +24,7 @@ class Questions extends Component {
     return (
       <QuestionsContainer theme={questionsTheme}>
         <QuestionSummary />
-        <QuestionsList />
+        <QuestionsTable />
       </QuestionsContainer>
     )
   }
