@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 const buttonIconStyle = {
-    "margin-left": "0.5rem", 
+    marginLeft: "0.5rem", 
 };
 
 const ActionsContainer = styled.section`
@@ -22,7 +22,11 @@ const PaddedContainer = styled.div`
     margin-top: 8px;
 `;
 
-const QuestionActions = ({ questionSelected, dispatch }) => {
+const QuestionActions = ({ 
+    questionSelected, 
+    dispatch, 
+    editActionDrawerVisible 
+}) => {
 
     const filterActions = () => {
         return Object.values(questionSelected.actions).map((currentActionKey) => {
@@ -30,12 +34,21 @@ const QuestionActions = ({ questionSelected, dispatch }) => {
         })
     };
 
+    const onEdit = () => {
+        dispatch({
+            type: 'EDIT_QUESTION_ACTION',
+            editActionDrawerVisible: true 
+        });
+    };
+
     const renderActions = () => {
         if (questionSelected) {
             const allActions = filterActions();
             return allActions.map((currentAction) => {
                 return(
-                    <PaddedContainer>
+                    <PaddedContainer 
+                        key={`${questionSelected.id}-${currentAction}`}
+                    >
                          {currentAction}
                         <ButtonIcon 
                             key={currentAction}
@@ -43,6 +56,7 @@ const QuestionActions = ({ questionSelected, dispatch }) => {
                             variant="border" 
                             size="small" 
                             style={buttonIconStyle}
+                            onClick={onEdit}
                             icon={<FontAwesomeIcon icon={faPencilAlt} />} 
                         /> 
                     </PaddedContainer>
@@ -62,7 +76,8 @@ const mapStateToProps = state => {
     return { 
       authenticated: state.authenticated,
       questions: state.questions,
-      questionSelected: state.questionSelected
+      questionSelected: state.questionSelected, 
+      editActionDrawerVisible: state.editActionDrawerVisible
     }
 };
 

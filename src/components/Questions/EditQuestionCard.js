@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import Rainbow from "../../assets/Rainbow.svg";
-import QuestionActions from "./QuestionActions";
+import QuestionActions from "./Actions/QuestionActions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Card, Button, Input } from 'react-rainbow-components';
 import { faTasks } from '@fortawesome/free-solid-svg-icons';
