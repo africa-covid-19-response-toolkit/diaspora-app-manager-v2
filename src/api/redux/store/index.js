@@ -31,6 +31,11 @@ const reducer = (state = initialState, action) => {
           ...state, 
           editActionDrawerVisible: action.editActionDrawerVisible
         }
+    } else if (action.type === 'SAVE_EDIT_ACTION_DRAWER') {
+      return {
+          ...state, 
+          editActionDrawerVisible: action.editActionDrawerVisible
+        }
     } else if (action.type === 'SAVE_EDIT') {
       const updatedQuestion =  {
           ...state.questions, 

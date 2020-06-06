@@ -17,14 +17,21 @@ const EditActionDrawer = ({ editActionDrawerVisible, dispatch }) => {
                 Content
             </form>
         )
-    }
+    };
 
     const handleClose = () => {
         dispatch({
             type: 'DISMISS_EDIT_ACTION_DRAWER',
             editActionDrawerVisible: false 
         });
-    }
+    };
+
+    const handleSave = () => {
+        dispatch({
+            type: 'SAVE_EDIT_ACTION_DRAWER',
+            editActionDrawerVisible: false 
+        });
+    };
 
     const renderFooter = () => {
         return(
@@ -36,6 +43,7 @@ const EditActionDrawer = ({ editActionDrawerVisible, dispatch }) => {
                 <Button 
                     label="Save"
                     variant="success"
+                    onClick={handleSave}
                 />
            </FooterContainer>
         )
