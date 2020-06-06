@@ -22,8 +22,8 @@ const filterQuestions = (questions) => {
 
 const QuestionsList = () => {
   const [questions, setQuestions] = useState([]);
-
-  const getQuestions = () => {
+  
+  const getQuestions = async (unmounted) => {
     const db = firebase.firestore();
     connectEmulatorToApp(db); 
 
@@ -36,13 +36,21 @@ const QuestionsList = () => {
               ...doc.data()
           }));
           allQuestions = filterQuestions(allQuestions);
-          setQuestions(allQuestions);
+          if (!unmounted)
+            setQuestions(allQuestions);
       });
   }
 
   useEffect(() => {
-    getQuestions();
-  }, [questions]);
+    let unmounted = false;
+    async function fetchData() {
+      await getQuestions(unmounted);
+    }
+    fetchData();
+    return () => {
+      unmounted = true
+    }
+  }, []);
 
   const renderTableActions = () => {
     return(
