@@ -3,7 +3,8 @@ import { createStore } from "redux"
 const initialState = {
     authenticated: false, 
     questions: [],
-    questionSelected: null
+    questionSelected: null, 
+    editActionDrawerVisible: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,6 +21,11 @@ const reducer = (state = initialState, action) => {
           ...action.selection
         }
       };
+    } else if (action.type === 'EDIT_QUESTION_ACTION') {
+      return {
+          ...state, 
+          editActionDrawerVisible: action.editActionDrawerVisible
+        }
     } else if (action.type === 'SAVE_EDIT') {
       const updatedQuestion =  {
           ...state.questions, 
@@ -32,7 +38,6 @@ const reducer = (state = initialState, action) => {
           }
         }
     }
-  
     return state;
   }
 
