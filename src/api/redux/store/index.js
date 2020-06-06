@@ -4,6 +4,7 @@ const initialState = {
     authenticated: false, 
     questions: [],
     questionSelected: null, 
+    showSuccessToastMessage: false, 
     editActionDrawerVisible: false
 };
 
@@ -39,6 +40,7 @@ const reducer = (state = initialState, action) => {
     } else if (action.type === 'SAVE_EDIT') {
       const updatedQuestion =  {
           ...state.questions, 
+        showSuccessToastMessage: action.showSuccessToastMessage, 
         [action.rowNum]: action.updatedQuestion
       };
       return {

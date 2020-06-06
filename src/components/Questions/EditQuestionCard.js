@@ -22,7 +22,11 @@ const CardContainer = styled.section`
 `;
 CardContainer.displayName = "CardContainer";
 
-const QuestionSummary = ({ questionSelected, dispatch }) => {
+const QuestionSummary = ({ 
+    questionSelected, 
+    showSuccessToastMessage, 
+    dispatch 
+}) => {
     const [question, setQuestion] = useState("");
 
     useEffect(() => {
@@ -64,6 +68,7 @@ const QuestionSummary = ({ questionSelected, dispatch }) => {
         dispatch({
             type: 'SAVE_EDIT',
             rowNum: questionSelected.rowNum, 
+            showSuccessToastMessage: true, 
             updatedQuestion: {
                 ...questionSelected, 
                 text: {
@@ -130,6 +135,7 @@ const mapStateToProps = state => {
     return { 
       authenticated: state.authenticated,
       questions: state.questions,
+      showSuccessToastMessage: state.showSuccessToastMessage,
       questionSelected: state.questionSelected
     }
 };

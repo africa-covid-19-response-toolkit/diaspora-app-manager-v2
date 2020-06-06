@@ -1,6 +1,7 @@
-import React, {Component} from "react";
+import React from "react";
 import { questionsTheme } from "../../themes";
-import { Application } from 'react-rainbow-components';
+import { connect } from "react-redux";
+import { Application, Notification } from 'react-rainbow-components';
 import QuestionSummary from "./EditQuestionCard";
 import QuestionsTable from "./QuestionsTable";
 import EditActionDrawer from "./Actions/EditActionDrawer";
@@ -15,21 +16,28 @@ const QuestionsContainer = styled(Application)`
 `;
 QuestionsContainer.displayName = "QuestionsContainer";
 
-class Questions extends Component {
-  constructor() {
-    super()
-    this.state = {}
-  }
-
-  render() {
+const Questions = ({ showSuccessToastMessage }) => {
     return (
       <QuestionsContainer theme={questionsTheme}>
+        {showSuccessToastMessage && 
+            <Notification
+                title="Saved!"
+                description="Your edits have been saved."
+                icon="success"
+            />
+        }
         <EditActionDrawer />
         <QuestionSummary />
         <QuestionsTable />
       </QuestionsContainer>
     )
-  }
 }
 
-export default Questions; 
+const mapStateToProps = state => {
+  return { 
+    authenticated: state.authenticated,
+    showSuccessToastMessage: state.showSuccessToastMessage,
+  }
+};
+
+export default connect(mapStateToProps)(Questions); 
