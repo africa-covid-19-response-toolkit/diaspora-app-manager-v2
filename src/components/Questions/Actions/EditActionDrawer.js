@@ -1,8 +1,14 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { connect } from "react-redux";
+import styled from "styled-components";
 import { Drawer, Button } from "react-rainbow-components";
 
-const EditActionDrawer = ({ editActionDrawerVisible }) => {
+const FooterContainer = styled.section`
+    display: flex;
+    justify-content: space-between;
+`;
+
+const EditActionDrawer = ({ editActionDrawerVisible, dispatch }) => {
 
     const renderForm = () => {
         console.log(editActionDrawerVisible);
@@ -13,12 +19,25 @@ const EditActionDrawer = ({ editActionDrawerVisible }) => {
         )
     }
 
+    const handleClose = () => {
+        dispatch({
+            type: 'DISMISS_EDIT_ACTION_DRAWER',
+            editActionDrawerVisible: false 
+        });
+    }
+
     const renderFooter = () => {
         return(
-            <Fragment>
-                <Button />
-                <Button />
-            </Fragment>
+            <FooterContainer>
+                <Button 
+                    label="Cancel"
+                    onClick={handleClose}
+                />
+                <Button 
+                    label="Save"
+                    variant="success"
+                />
+           </FooterContainer>
         )
     };
 
@@ -27,6 +46,7 @@ const EditActionDrawer = ({ editActionDrawerVisible }) => {
         header="Edit action"
         slideFrom="right"
         isOpen={editActionDrawerVisible}
+        onRequestClose={handleClose}
         footer={renderFooter()}
       >
           {renderForm()}
