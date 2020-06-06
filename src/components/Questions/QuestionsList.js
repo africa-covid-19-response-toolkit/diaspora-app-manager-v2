@@ -46,8 +46,8 @@ const QuestionsList = () => {
     async function fetchData() {
       await getQuestions(unmounted);
     }
+    fetchData();
     return () => {
-      fetchData();
       unmounted = true
     }
   }, []);
