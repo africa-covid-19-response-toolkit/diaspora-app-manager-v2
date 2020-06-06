@@ -1,5 +1,7 @@
-import React, {Component} from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import firebase from "../../api/firebase/firestore";
+import connectEmulatorToApp from "../../api/firebase/connect";
 import { Table, Column, MenuItem } from 'react-rainbow-components';
 
 const TableContainer = styled.section`
@@ -12,25 +14,50 @@ TableContainer.displayName = "TableContainer";
 
 const tableContainerStyles = { height: 600 };
 
-class QuestionsList extends Component {
-  constructor() {
-    super()
-    this.state = {}
+const filterQuestions = (questions) => {
+  return questions.filter(function (currQuestion) {
+    return parseInt(currQuestion.id) > 0;
+  });
+};
+
+const QuestionsList = () => {
+  const [questions, setQuestions] = useState([]);
+
+  useEffect(() => {
+    const db = firebase.firestore();
+    connectEmulatorToApp(db); 
+
+    db
+      .collection("questions")
+      .orderBy(firebase.firestore.FieldPath.documentId())
+      .onSnapshot(snapshot => {
+          let allQuestions = snapshot.docs.map(doc => ({
+              id: doc.id, 
+              ...doc.data()
+          }));
+          allQuestions = filterQuestions(allQuestions);
+          setQuestions(allQuestions);
+      });
+  }, []);
+
+  const renderTableActions = () => {
+    return(
+      <Column type="action">
+        <MenuItem label="Edit" onClick={(e, data) => console.log(`Edit`)} />
+        <MenuItem label="Delete" onClick={(e, data) => console.log(`Delete`)} />
+      </Column>
+    );
   }
-  render() {
-    return (
-      <TableContainer>
-        <Table style={tableContainerStyles} keyField="id">
-          <Column header="Question" field="name" />
-          <Column header="Prompt" field="company" />
-          <Column type="action">
-            <MenuItem label="Edit" onClick={(e, data) => console.log(`Edit`)} />
-            <MenuItem label="Delete" onClick={(e, data) => console.log(`Delete`)} />
-        </Column>
-      </Table>
-    </TableContainer>
-    )
-  }
+
+  return (
+    <TableContainer>
+      <Table data={questions} style={tableContainerStyles} keyField="id">
+        <Column header="Question" field="id" />
+        <Column header="Prompt" field="text.eng" />
+        {renderTableActions()}
+    </Table>
+  </TableContainer>
+  )
 }
 
 export default QuestionsList; 

@@ -10,17 +10,17 @@ import Settings from "./components/Settings/Settings";
 import SignedOut from "./components/Auth/SignOut/SignedOut";
 
 const publicRoutes = [
-    <Route exact path="/" render={props => <SignIn {...props} />} />,
-    <Route exact path="/forgot_password" render={props => <ForgotPassword {...props} />} />,
-    <Route exact path="/signup" render={props => <SignUp {...props} />} />
+    <Route exact path="/" render={props => <SignIn {...props} />} key="sign_in_route" />,
+    <Route exact path="/forgot_password" render={props => <ForgotPassword {...props} />} key="forgot_route" />,
+    <Route exact path="/signup" render={props => <SignUp {...props} />} key="/signup_route"/>
 ];
   
 const restrictedRoutes = [
-    <Route exact path="/dashboard" render={props => <Dashboard {...props} />} />,
-    <Route path="/messages" render={props => <Messages {...props} />} />,
-    <Route path="/questions" render={props => <Questions {...props} />} />,
-    <Route path="/settings" render={props => <Settings {...props} />} />,
-    <Route path="/signed_out" render={props => <SignedOut {...props} />} />
+    <Route exact path="/dashboard" render={props => <Dashboard {...props} />} key="dashboard_route" />,
+    <Route path="/messages" render={props => <Messages {...props} />} key="messages_route" />,
+    <Route path="/questions" render={props => <Questions {...props} />} key="questions_route" />,
+    <Route path="/settings" render={props => <Settings {...props} />} key="settings_route" />,
+    <Route path="/signed_out" render={props => <SignedOut {...props} />} key="signed_out_route" />
 ];
 
 export { publicRoutes, restrictedRoutes };
