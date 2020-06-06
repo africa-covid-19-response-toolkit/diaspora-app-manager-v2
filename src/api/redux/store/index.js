@@ -2,15 +2,35 @@ import { createStore } from "redux"
 
 const initialState = {
     authenticated: false, 
+    questions: [],
     questionSelected: null
 };
 
 const reducer = (state = initialState, action) => {
-    if (action.type === 'SELECT_QUESTION') {
+    if (action.type === "LOAD_QUESTIONS") {
       return {
         ...state, 
-        questionSelected: action.selection
+        questions: action.allQuestions
       };
+    } else if (action.type === 'SELECT_QUESTION') {
+      return {
+        ...state, 
+        questionSelected: {
+          rowNum: action.rowNum,
+          ...action.selection
+        }
+      };
+    } else if (action.type === 'SAVE_EDIT') {
+      const updatedQuestion =  {
+          ...state.questions, 
+        [action.rowNum]: action.updatedQuestion
+      };
+      return {
+          ...state, 
+          questions: {
+            ...updatedQuestion
+          }
+        }
     }
   
     return state;

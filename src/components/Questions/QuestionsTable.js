@@ -15,20 +15,14 @@ TableContainer.displayName = "TableContainer";
 
 const tableContainerStyles = { height: 600 };
 
-const filterQuestions = (questions) => {
-  return questions.filter(function (currQuestion) {
-    return parseInt(currQuestion.id) > 0;
-  });
-};
-
-const QuestionsTable = ({dispatch}) => {
+const QuestionsTable = ({ dispatch }) => {
   const [questions, setQuestions] = useState([]);
 
-  useEffect(() => {
+  const getQuestions = () => {
     const db = firebase.firestore();
     connectEmulatorToApp(db); 
 
-    db
+    db // Fetch questions from firestore
       .collection("questions")
       .orderBy(firebase.firestore.FieldPath.documentId())
       .onSnapshot(snapshot => {
@@ -38,12 +32,33 @@ const QuestionsTable = ({dispatch}) => {
           }));
           allQuestions = filterQuestions(allQuestions);
           setQuestions(allQuestions);
+          dispatch({
+            type: 'LOAD_QUESTIONS',
+            allQuestions
+          });
       });
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      return await getQuestions();
+    } 
+    fetchData(); 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
+  const filterQuestions = (questions) => {
+    return questions.filter((currQuestion) => {
+      return parseInt(currQuestion.id) > 0;
+    });
+  };
+
   const onSelect = (selectedRow) => {
+    const rowNum = parseInt(Object.keys(selectedRow)[0]);
     dispatch({
       type: 'SELECT_QUESTION',
+      rowNum, 
       selection: selectedRow[0] 
     })
   };
@@ -68,6 +83,7 @@ const QuestionsTable = ({dispatch}) => {
 const mapStateToProps = state => {
   return { 
     authenticated: state.authenticated,
+    questions: state.questions,
     questionSelected: state.questionSelected
   }
 };

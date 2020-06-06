@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { questionsTheme } from "../../themes";
 import { Application } from 'react-rainbow-components';
-import QuestionSummary from "./QuestionSummary";
+import QuestionSummary from "./EditQuestionCard";
 import QuestionsTable from "./QuestionsTable";
 import styled from "styled-components";
 

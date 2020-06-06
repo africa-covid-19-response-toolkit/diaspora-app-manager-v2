@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import Rainbow from "../../assets/Rainbow.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Card, ButtonIcon, Button, Input } from 'react-rainbow-components';
-import { faTasks, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { Card, Button, Input } from 'react-rainbow-components';
+import { faTasks } from '@fortawesome/free-solid-svg-icons';
 
 const iconContainerStyles = {
     width: '2.5rem',
@@ -21,7 +21,7 @@ const CardContainer = styled.section`
 `;
 CardContainer.displayName = "CardContainer";
 
-const QuestionSummary = ({ questionSelected }) => {
+const QuestionSummary = ({ questionSelected, dispatch }) => {
     const [question, setQuestion] = useState("");
 
     useEffect(() => {
@@ -57,22 +57,34 @@ const QuestionSummary = ({ questionSelected }) => {
     const onEdit = (e) => {
         const editedQuestion = e.target.value;
         setQuestion(editedQuestion);
-        
+    };
+
+    const onSave = () => {
+        dispatch({
+            type: 'SAVE_EDIT',
+            rowNum: questionSelected.rowNum, 
+            updatedQuestion: {
+                ...questionSelected, 
+                text: {
+                    eng: question
+                }
+            }
+        })
     };
 
     const renderQuestion = () => {
-        
         return(
-            <div className="rainbow-align-content_center rainbow-flex_wrap">
-            <Input 
-                label="Edit the question"
-                isCentered
-                onChange={onEdit}
-                style={containerStyles}
-                value={question}
-                bottomHelpText="ex: How many people have you been in contact with in the past 24 hours?"
-            />
-            </div>
+            <section className="rainbow-align-content_center rainbow-flex_wrap">
+                <Input 
+                    label="Edit the question"
+                    isCentered
+                    onChange={onEdit}
+                    style={containerStyles}
+                    value={question || ""}
+                    bottomHelpText="ex: How many people have you been in contact with in the past 24 hours?"
+                />
+                
+            </section>
         )
     };
 
@@ -81,8 +93,14 @@ const QuestionSummary = ({ questionSelected }) => {
     };
 
     const renderFooter = () => {
+        const disabled = questionSelected ? false : true; 
         return(
-            <ButtonIcon icon={<FontAwesomeIcon icon={faAngleDown} />} />
+            <Button
+                disabled={disabled}
+                label="Save"
+                variant="success"
+                onClick={onSave} 
+            />
         )
     };
 
@@ -109,6 +127,7 @@ const QuestionSummary = ({ questionSelected }) => {
 const mapStateToProps = state => {
     return { 
       authenticated: state.authenticated,
+      questions: state.questions,
       questionSelected: state.questionSelected
     }
 };
