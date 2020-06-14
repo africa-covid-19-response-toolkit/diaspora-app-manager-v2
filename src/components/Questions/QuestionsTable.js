@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import { Table, Column } from 'react-rainbow-components';
-import getQuestions from "../../api/firebase/local/getQuestions";
+import getQuestions from "../../api/firebase/utils/getQuestions";
 
 const TableContainer = styled.section`
     justify-content: center;  
