@@ -45,16 +45,14 @@ const reducer = (state = initialState, action) => {
           editActionDrawerVisible: action.editActionDrawerVisible
         }
     } else if (action.type === 'SAVE_EDIT') {
-      const updatedQuestion =  {
-          ...state.questions, 
-        [action.rowNum]: action.updatedQuestion
-      };
+      const { questions } = state;
+      const { rowNum, updatedQuestion } = action;
+      delete updatedQuestion.rowNum;
+      questions[rowNum] = updatedQuestion;
       return {
           ...state, 
-          showSuccessToastMessage: action.showSuccessToastMessage, 
-          questions: {
-            ...updatedQuestion
-          }
+          questions,
+          showSuccessToastMessage: action.showSuccessToastMessage
         }
     } else if (action.type === "CLOSE_NOTIFICATION") {
       return {
