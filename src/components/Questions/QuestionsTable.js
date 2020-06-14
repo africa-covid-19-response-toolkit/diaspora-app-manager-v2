@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import { Table, Column } from 'react-rainbow-components';
@@ -13,8 +13,11 @@ const TableContainer = styled.section`
 TableContainer.displayName = "TableContainer";
 const tableContainerStyles = { height: 600 };
 
-const QuestionsTable = ({ dispatch, loading }) => {
-  const [questions, setQuestions] = useState([]);
+const QuestionsTable = ({ 
+  dispatch,
+  loading, 
+  questions 
+}) => {
 
   useEffect(() => {
     async function fetchData() {
@@ -23,7 +26,6 @@ const QuestionsTable = ({ dispatch, loading }) => {
         loading: true
       });
       const allQuestions = await getQuestions();
-      setQuestions(allQuestions);
       dispatch({
         type: 'DONE_LOADING_QUESTIONS', 
         allQuestions, 
@@ -34,7 +36,7 @@ const QuestionsTable = ({ dispatch, loading }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onSelect = (selectedRow) => {
+  const onSelect = selectedRow => {
     const rowNum = parseInt(Object.keys(selectedRow)[0]);
     dispatch({
       type: 'SELECT_QUESTION',

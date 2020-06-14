@@ -67,7 +67,7 @@ const QuestionSummary = ({
     const onSave = () => {
         dispatch({
             type: 'SAVE_EDIT',
-            rowNum: questionSelected.rowNum, 
+            rowNum: questionSelected.id - 1, 
             showSuccessToastMessage: true, 
             updatedQuestion: {
                 ...questionSelected, 
