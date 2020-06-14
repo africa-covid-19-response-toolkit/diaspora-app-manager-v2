@@ -20,11 +20,12 @@ const Questions = ({ showSuccessToastMessage }) => {
     return (
       <QuestionsContainer theme={questionsTheme}>
         {showSuccessToastMessage && 
-            <Notification
-                title="Saved!"
-                description="Your edits have been saved."
-                icon="success"
-            />
+          <Notification
+              title="Saved!"
+              hideCloseButton={true}
+              description="Your edits have been saved."
+              icon="success"
+          />
         }
         <EditActionDrawer />
         <QuestionSummary />

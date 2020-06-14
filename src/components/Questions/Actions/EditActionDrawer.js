@@ -98,7 +98,7 @@ const EditActionDrawer = ({
 
     return (
         <div className="rainbow-p-around_small rainbow-flex rainbow-flex_wrap  rainbow-align-content_center">
-            `<Drawer
+            <Drawer
                 header="Edit action"
                 slideFrom="right"
                 isOpen={editActionDrawerVisible}
@@ -107,7 +107,7 @@ const EditActionDrawer = ({
             >
                 {questionSelected ? renderHeader() : null}
                 {questionSelected ? renderForm() : null}
-            </Drawer>`
+            </Drawer>
       </div>
     )
 }

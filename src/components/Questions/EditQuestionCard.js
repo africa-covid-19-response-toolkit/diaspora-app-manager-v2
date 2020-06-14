@@ -76,6 +76,13 @@ const QuestionSummary = ({
                 }
             }
         })
+
+        setTimeout(function() {
+            dispatch({
+            type: 'CLOSE_NOTIFICATION', 
+            showSuccessToastMessage: false 
+            })
+        }, 3000);
     };
 
     const renderQuestion = () => {
