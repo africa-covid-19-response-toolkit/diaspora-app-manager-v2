@@ -1,0 +1,3292 @@
+{
+  "questions": [
+    {
+      "1": {
+        "type": "question",
+        "text": {
+          "eng": "Are you ill, or caring for someone who is ill?",
+          "amh": "Are you ill, or caring for someone who is ill?",
+          "orm": "Are you ill, or caring for someone who is ill?",
+          "tig": "Are you ill, or caring for someone who is ill?"
+        },
+        "value_key": "ill",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "ill"
+                },
+                "Yes"
+              ]
+            },
+            "2",
+            "34"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "ill": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "ill": "No"
+            }
+          }
+        }
+      },
+      "2": {
+        "type": "question",
+        "text": {
+          "eng": "Are you answering for yourself or someone else?",
+          "amh": "Are you answering for yourself or someone else?",
+          "orm": "Are you answering for yourself or someone else?",
+          "tig": "Are you answering for yourself or someone else?"
+        },
+        "value_key": "answering_for",
+        "next": "3",
+        "actions": {
+          "myself": {
+            "order": 1,
+            "text": {
+              "eng": "Myself",
+              "amh": "Myself",
+              "orm": "Myself",
+              "tig": "Myself"
+            },
+            "value": {
+              "answering_for": "Myself"
+            }
+          },
+          "someone_else": {
+            "order": 2,
+            "text": {
+              "eng": "Someone else",
+              "amh": "Someone else",
+              "orm": "Someone else",
+              "tig": "Someone else"
+            },
+            "value": {
+              "answering_for": "Someone else"
+            }
+          }
+        }
+      },
+      "3": {
+        "type": "question",
+        "text": {
+          "eng": "What is your (their) age?",
+          "amh": "What is your (their) age?",
+          "orm": "What is your (their) age?",
+          "tig": "What is your (their) age?"
+        },
+        "value_key": "age_group",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "age_group"
+                },
+                "Younger than 2 years old"
+              ]
+            },
+            "4",
+            "28"
+          ]
+        },
+        "actions": {
+          "younger_than_2_years_old": {
+            "order": 1,
+            "text": {
+              "eng": "Younger than 2 years old",
+              "amh": "Younger than 2 years old",
+              "orm": "Younger than 2 years old",
+              "tig": "Younger than 2 years old"
+            },
+            "value": {
+              "age_group": "Younger than 2 years old"
+            }
+          },
+          "2_4_years": {
+            "order": 2,
+            "text": {
+              "eng": "2-4 years",
+              "amh": "2-4 years",
+              "orm": "2-4 years",
+              "tig": "2-4 years"
+            },
+            "value": {
+              "age_group": "2-4 years"
+            }
+          },
+          "5_9_years": {
+            "order": 3,
+            "text": {
+              "eng": "5-9 years",
+              "amh": "5-9 years",
+              "orm": "5-9 years",
+              "tig": "5-9 years"
+            },
+            "value": {
+              "age_group": "5-9 years"
+            }
+          },
+          "10_18_years": {
+            "order": 4,
+            "text": {
+              "eng": "10-18 years",
+              "amh": "10-18 years",
+              "orm": "10-18 years",
+              "tig": "10-18 years"
+            },
+            "value": {
+              "age_group": "10-18 years"
+            }
+          },
+          "19_29_years": {
+            "order": 4,
+            "text": {
+              "eng": "19-29 years",
+              "amh": "19-29 years",
+              "orm": "19-29 years",
+              "tig": "19-29 years"
+            },
+            "value": {
+              "age_group": "19-29 years"
+            }
+          },
+          "30_39_years": {
+            "order": 5,
+            "text": {
+              "eng": "30-39 years",
+              "amh": "30-39 years",
+              "orm": "30-39 years",
+              "tig": "30-39 years"
+            },
+            "value": {
+              "age_group": "30-39 years"
+            }
+          },
+          "40_49_years": {
+            "order": 6,
+            "text": {
+              "eng": "40-49 years",
+              "amh": "40-49 years",
+              "orm": "40-49 years",
+              "tig": "40-49 years"
+            },
+            "value": {
+              "age_group": "40-49 years"
+            }
+          },
+          "50_59_years": {
+            "order": 7,
+            "text": {
+              "eng": "50-59 years",
+              "amh": "50-59 years",
+              "orm": "50-59 years",
+              "tig": "50-59 years"
+            },
+            "value": {
+              "age_group": "50-59 years"
+            }
+          },
+          "60_64_years": {
+            "order": 8,
+            "text": {
+              "eng": "60-64 years",
+              "amh": "60-64 years",
+              "orm": "60-64 years",
+              "tig": "60-64 years"
+            },
+            "value": {
+              "age_group": "60-64 years"
+            }
+          },
+          "65_69_years": {
+            "order": 9,
+            "text": {
+              "eng": "65-69 years",
+              "amh": "65-69 years",
+              "orm": "65-69 years",
+              "tig": "65-69 years"
+            },
+            "value": {
+              "age_group": "65-69 years"
+            }
+          },
+          "70_79_years": {
+            "order": 10,
+            "text": {
+              "eng": "70-79 years",
+              "amh": "70-79 years",
+              "orm": "70-79 years",
+              "tig": "70-79 years"
+            },
+            "value": {
+              "age_group": "70-79 years"
+            }
+          },
+          "80_": {
+            "order": 11,
+            "text": {
+              "eng": "80+",
+              "amh": "80+",
+              "orm": "80+",
+              "tig": "80+"
+            },
+            "value": {
+              "age_group": "80+"
+            }
+          }
+        }
+      },
+      "4": {
+        "type": "question",
+        "text": {
+          "eng": "Are they experiencing any of the following life threatening symptoms?\r\n  \u2022 Not experiencing any life threatening symptoms\r\n  \u2022 Extremely fast or shallow breathing\r\n  \u2022 Blue colored lips or face\r\n  \u2022 Not waking up or not interacting when awake\r\n  \u2022 So irritable that the child does not want to be held\r\n  \u2022 Seizures",
+          "amh": "Are they experiencing any of the following life threatening symptoms?\r\n  \u2022 Not experiencing any life threatening symptoms\r\n  \u2022 Extremely fast or shallow breathing\r\n  \u2022 Blue colored lips or face\r\n  \u2022 Not waking up or not interacting when awake\r\n  \u2022 So irritable that the child does not want to be held\r\n  \u2022 Seizures",
+          "orm": "Are they experiencing any of the following life threatening symptoms?\r\n  \u2022 Not experiencing any life threatening symptoms\r\n  \u2022 Extremely fast or shallow breathing\r\n  \u2022 Blue colored lips or face\r\n  \u2022 Not waking up or not interacting when awake\r\n  \u2022 So irritable that the child does not want to be held\r\n  \u2022 Seizures",
+          "tig": "Are they experiencing any of the following life threatening symptoms?\r\n  \u2022 Not experiencing any life threatening symptoms\r\n  \u2022 Extremely fast or shallow breathing\r\n  \u2022 Blue colored lips or face\r\n  \u2022 Not waking up or not interacting when awake\r\n  \u2022 So irritable that the child does not want to be held\r\n  \u2022 Seizures"
+        },
+        "value_key": "symptom_4",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "symptom_4"
+                },
+                "Yes"
+              ]
+            },
+            "msg4",
+            {
+              "==": [
+                {
+                  "var": "symptom_4"
+                },
+                "No"
+              ]
+            },
+            "msg3"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "symptom_4": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "symptom_4": "No"
+            }
+          }
+        }
+      },
+      "5": {
+        "type": "question",
+        "text": {
+          "eng": "Are you (they) experiencing any of the following life threatening symptoms?\r\n  \u2022 Not experiencing any life threatening symptoms\r\n  \u2022 Blue colored lips or face\r\n  \u2022 Severe and constant pain or pressure in the chest\r\n  \u2022 Severe and constant dizziness or lightheadedness\r\n  \u2022 Acting confused (new or worsening)\r\n  \u2022 Unconscious or very difficult to wake up\r\n  \u2022 Slurred speech (new or worsening)\r\n  \u2022 New seizure or seizures that won won\u2019t stop",
+          "amh": "Are you (they) experiencing any of the following life threatening symptoms?\r\n  \u2022 Not experiencing any life threatening symptoms\r\n  \u2022 Blue colored lips or face\r\n  \u2022 Severe and constant pain or pressure in the chest\r\n  \u2022 Severe and constant dizziness or lightheadedness\r\n  \u2022 Acting confused (new or worsening)\r\n  \u2022 Unconscious or very difficult to wake up\r\n  \u2022 Slurred speech (new or worsening)\r\n  \u2022 New seizure or seizures that won won\u2019t stop",
+          "orm": "Are you (they) experiencing any of the following life threatening symptoms?\r\n  \u2022 Not experiencing any life threatening symptoms\r\n  \u2022 Blue colored lips or face\r\n  \u2022 Severe and constant pain or pressure in the chest\r\n  \u2022 Severe and constant dizziness or lightheadedness\r\n  \u2022 Acting confused (new or worsening)\r\n  \u2022 Unconscious or very difficult to wake up\r\n  \u2022 Slurred speech (new or worsening)\r\n  \u2022 New seizure or seizures that won won\u2019t stop",
+          "tig": "Are you (they) experiencing any of the following life threatening symptoms?\r\n  \u2022 Not experiencing any life threatening symptoms\r\n  \u2022 Blue colored lips or face\r\n  \u2022 Severe and constant pain or pressure in the chest\r\n  \u2022 Severe and constant dizziness or lightheadedness\r\n  \u2022 Acting confused (new or worsening)\r\n  \u2022 Unconscious or very difficult to wake up\r\n  \u2022 Slurred speech (new or worsening)\r\n  \u2022 New seizure or seizures that won won\u2019t stop"
+        },
+        "value_key": "symptom_5",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "symptom_5"
+                },
+                "Yes"
+              ]
+            },
+            "msg4",
+            {
+              "==": [
+                {
+                  "var": "symptom_5"
+                },
+                "None of the above"
+              ]
+            },
+            {
+              "if": [
+                {
+                  "==": [
+                    {
+                      "var": "age_group"
+                    },
+                    "Younger than 2 years old"
+                  ]
+                },
+                "6",
+                "7"
+              ]
+            }
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "symptom_5": "Yes"
+            }
+          },
+          "no_of_the_above": {
+            "order": 2,
+            "text": {
+              "eng": "None of the above",
+              "amh": "None of the above",
+              "orm": "None of the above",
+              "tig": "None of the above"
+            },
+            "value": {
+              "symptom_5": "None of the above"
+            }
+          }
+        }
+      },
+      "6": {
+        "type": "question",
+        "text": {
+          "eng": "Do you (they) have any of the following?\r\n  \u2022 Coughing up blood (more than about 1 teaspoon)\r\n  \u2022 Signs of low blood pressure (too weak to stand, light headed, feeling cold, pale, clammy skin)\r\n  \u2022 Ribs are pulling in with each breath (retractions)\r\n  \u2022 Dehydration",
+          "amh": "Do you (they) have any of the following?\r\n  \u2022 Coughing up blood (more than about 1 teaspoon)\r\n  \u2022 Signs of low blood pressure (too weak to stand, light headed, feeling cold, pale, clammy skin)\r\n  \u2022 Ribs are pulling in with each breath (retractions)\r\n  \u2022 Dehydration",
+          "orm": "Do you (they) have any of the following?\r\n  \u2022 Coughing up blood (more than about 1 teaspoon)\r\n  \u2022 Signs of low blood pressure (too weak to stand, light headed, feeling cold, pale, clammy skin)\r\n  \u2022 Ribs are pulling in with each breath (retractions)\r\n  \u2022 Dehydration",
+          "tig": "Do you (they) have any of the following?\r\n  \u2022 Coughing up blood (more than about 1 teaspoon)\r\n  \u2022 Signs of low blood pressure (too weak to stand, light headed, feeling cold, pale, clammy skin)\r\n  \u2022 Ribs are pulling in with each breath (retractions)\r\n  \u2022 Dehydration"
+        },
+        "value_key": "symptom_6",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "symptom_6"
+                },
+                "Yes"
+              ]
+            },
+            "msg4",
+            {
+              "==": [
+                {
+                  "var": "symptom_6"
+                },
+                "None of the above"
+              ]
+            },
+            "30"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "symptom_6": "Yes"
+            }
+          },
+          "no_of_the_above": {
+            "order": 2,
+            "text": {
+              "eng": "None of the above",
+              "amh": "None of the above",
+              "orm": "None of the above",
+              "tig": "None of the above"
+            },
+            "value": {
+              "symptom_6": "None of the above"
+            }
+          }
+        }
+      },
+      "7": {
+        "type": "question",
+        "text": {
+          "eng": "Do you (they) have any of the following?\r\n  \u2022 Coughing up blood (more than about 1 teaspoon)\r\n  \u2022 Signs of low blood pressure (too weak to stand, light headed, feeling cold, pale, clammy skin)",
+          "amh": "Do you (they) have any of the following?\r\n  \u2022 Coughing up blood (more than about 1 teaspoon)\r\n  \u2022 Signs of low blood pressure (too weak to stand, light headed, feeling cold, pale, clammy skin)",
+          "orm": "Do you (they) have any of the following?\r\n  \u2022 Coughing up blood (more than about 1 teaspoon)\r\n  \u2022 Signs of low blood pressure (too weak to stand, light headed, feeling cold, pale, clammy skin)",
+          "tig": "Do you (they) have any of the following?\r\n  \u2022 Coughing up blood (more than about 1 teaspoon)\r\n  \u2022 Signs of low blood pressure (too weak to stand, light headed, feeling cold, pale, clammy skin)"
+        },
+        "value_key": "symptom_7",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "symptom_7"
+                },
+                "Yes"
+              ]
+            },
+            "msg4",
+            {
+              "==": [
+                {
+                  "var": "symptom_7"
+                },
+                "None of the above"
+              ]
+            },
+            "30"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "symptom_7": "Yes"
+            }
+          },
+          "no_of_the_above": {
+            "order": 2,
+            "text": {
+              "eng": "None of the above",
+              "amh": "None of the above",
+              "orm": "None of the above",
+              "tig": "None of the above"
+            },
+            "value": {
+              "symptom_7": "None of the above"
+            }
+          }
+        }
+      },
+      "8": {
+        "type": "question",
+        "text": {
+          "eng": "In the two weeks before you (they) felt sick, did you (they):\r\n  \u2022 Have contact with someone diagnosed with COVID 19\r\n  \u2022 Live in or visit a place where COVID 19 is spreading",
+          "amh": "In the two weeks before you (they) felt sick, did you (they):\r\n  \u2022 Have contact with someone diagnosed with COVID 19\r\n  \u2022 Live in or visit a place where COVID 19 is spreading",
+          "orm": "In the two weeks before you (they) felt sick, did you (they):\r\n  \u2022 Have contact with someone diagnosed with COVID 19\r\n  \u2022 Live in or visit a place where COVID 19 is spreading",
+          "tig": "In the two weeks before you (they) felt sick, did you (they):\r\n  \u2022 Have contact with someone diagnosed with COVID 19\r\n  \u2022 Live in or visit a place where COVID 19 is spreading"
+        },
+        "value_key": "symptom_8",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "symptom_8"
+                },
+                "Yes"
+              ]
+            },
+            "9",
+            {
+              "==": [
+                {
+                  "var": "symptom_8"
+                },
+                "No"
+              ]
+            },
+            "14"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "symptom_8": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "symptom_8": "No"
+            }
+          }
+        }
+      },
+      "9": {
+        "type": "question",
+        "text": {
+          "eng": "Do you (they) have any of the following? (Check any)",
+          "amh": "Do you (they) have any of the following? (Check any)",
+          "orm": "Do you (they) have any of the following? (Check any)",
+          "tig": "Do you (they) have any of the following? (Check any)"
+        },
+        "value_key": "symptom_9",
+        "multiple_choice": [
+          {
+            "text": {
+              "eng": "Fever or feeling feverish (chills, sweating)",
+              "amh": "Fever or feeling feverish (chills, sweating)",
+              "orm": "Fever or feeling feverish (chills, sweating)",
+              "tig": "Fever or feeling feverish (chills, sweating)"
+            },
+            "value": {
+              "symptom_9": "Fever or feeling feverish (chills, sweating)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Cough",
+              "amh": "Cough",
+              "orm": "Cough",
+              "tig": "Cough"
+            },
+            "value": {
+              "symptom_9": "Cough"
+            }
+          },
+          {
+            "text": {
+              "eng": "Sore throat",
+              "amh": "Sore throat",
+              "orm": "Sore throat",
+              "tig": "Sore throat"
+            },
+            "value": {
+              "symptom_9": "Sore throat"
+            }
+          },
+          {
+            "text": {
+              "eng": "Muscle aches or body aches",
+              "amh": "Muscle aches or body aches",
+              "orm": "Muscle aches or body aches",
+              "tig": "Muscle aches or body aches"
+            },
+            "value": {
+              "symptom_9": "Muscle aches or body aches"
+            }
+          },
+          {
+            "text": {
+              "eng": "Vomiting or diarrhea",
+              "amh": "Vomiting or diarrhea",
+              "orm": "Vomiting or diarrhea",
+              "tig": "Vomiting or diarrhea"
+            },
+            "value": {
+              "symptom_9": "Vomiting or diarrhea"
+            }
+          },
+          {
+            "text": {
+              "eng": "Change in smell or taste",
+              "amh": "Change in smell or taste",
+              "orm": "Change in smell or taste",
+              "tig": "Change in smell or taste"
+            },
+            "value": {
+              "symptom_9": "Change in smell or taste"
+            }
+          },
+          {
+            "text": {
+              "eng": "Other symptoms",
+              "amh": "Other symptoms",
+              "orm": "Other symptoms",
+              "tig": "Other symptoms"
+            },
+            "value": {
+              "symptom_9": "Other symptoms"
+            }
+          }
+        ],
+        "next": {
+          "if": [
+            {
+              "or": [
+                {
+                  "all": [
+                    {
+                      "var": "symptom_9"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": ""
+                        },
+                        [
+                          "Cough",
+                          "Fever or feeling feverish (chills, sweating)"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "==": [
+                    {
+                      "var": "symptom_30"
+                    },
+                    "Mild or No trouble breathing"
+                  ]
+                }
+              ]
+            },
+            "11",
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "symptom_30"
+                    },
+                    "No trouble breathing"
+                  ]
+                },
+                {
+                  "some": [
+                    {
+                      "var": "symptom_9"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": ""
+                        },
+                        [
+                          "Sore throat",
+                          "Muscle aches or body aches",
+                          "Vomiting or diarrhea",
+                          "Change in smell or taste"
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "25",
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "symptom_30"
+                    },
+                    "No trouble breathing"
+                  ]
+                },
+                {
+                  "all": [
+                    {
+                      "var": "symptom_9"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": ""
+                        },
+                        [
+                          "Other symptoms"
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "msg10"
+          ]
+        },
+        "actions": {
+          "next": {
+            "order": 1,
+            "text": {
+              "eng": "Next",
+              "amh": "Next",
+              "orm": "Next",
+              "tig": "Next"
+            }
+          }
+        }
+      },
+      "11": {
+        "type": "question",
+        "text": {
+          "eng": "Do you (they) live in a long-term care facility or nursing home?",
+          "amh": "Do you (they) live in a long-term care facility or nursing home?",
+          "orm": "Do you (they) live in a long-term care facility or nursing home?",
+          "tig": "Do you (they) live in a long-term care facility or nursing home?"
+        },
+        "value_key": "live_long_term_care_facility",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "live_long_term_care_facility"
+                },
+                "Yes"
+              ]
+            },
+            "msg7",
+            {
+              "in": [
+                {
+                  "var": "age_group"
+                },
+                [
+                  "19-29 years",
+                  "30-39 years",
+                  "40-49 years",
+                  "50-59 years",
+                  "60-64 years",
+                  "65-69 years",
+                  "70-79 years",
+                  "80+"
+                ]
+              ]
+            },
+            "12",
+            "13"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "live_long_term_care_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "live_long_term_care_facility": "No"
+            }
+          }
+        }
+      },
+      "12": {
+        "type": "question",
+        "text": {
+          "eng": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "amh": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "orm": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "tig": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?"
+        },
+        "value_key": "work_medical_facility",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "work_medical_facility"
+                },
+                "Yes"
+              ]
+            },
+            "msg9_6_t2",
+            "13"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "work_medical_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "work_medical_facility": "No"
+            }
+          }
+        }
+      },
+      "13": {
+        "type": "question",
+        "text": {
+          "eng": "Do you have any of the following conditions (check any)",
+          "amh": "Do you have any of the following conditions (check any)",
+          "orm": "Do you have any of the following conditions (check any)",
+          "tig": "Do you have any of the following conditions (check any)"
+        },
+        "value_key": "conditions",
+        "multiple_choice": [
+          {
+            "text": {
+              "eng": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "amh": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "orm": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "tig": "Chronic lung disease, moderate to severe asthma, or smoking"
+            },
+            "value": {
+              "conditions": "Chronic lung disease, moderate to severe asthma, or smoking"
+            }
+          },
+          {
+            "text": {
+              "eng": "Serious heart conditions",
+              "amh": "Serious heart conditions",
+              "orm": "Serious heart conditions",
+              "tig": "Serious heart conditions"
+            },
+            "value": {
+              "conditions": "Serious heart conditions"
+            }
+          },
+          {
+            "text": {
+              "eng": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "amh": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "orm": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "tig": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)"
+            },
+            "value": {
+              "conditions": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "amh": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "orm": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "tig": "Severe obesity (Body Mass Index [BMI] > 40)"
+            },
+            "value": {
+              "conditions": "Severe obesity (Body Mass Index [BMI] > 40)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "amh": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "orm": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "tig": "Underlying conditions (diabetes, renal failure, or liver disease)"
+            },
+            "value": {
+              "conditions": "Underlying conditions (diabetes, renal failure, or liver disease)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Pregnancy",
+              "amh": "Pregnancy",
+              "orm": "Pregnancy",
+              "tig": "Pregnancy"
+            },
+            "value": {
+              "conditions": "Pregnancy"
+            },
+            "disabled": {
+              "if": [
+                {
+                  "==": [
+                    {
+                      "var": "gender"
+                    },
+                    "Male"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "text": {
+              "eng": "None of the above",
+              "amh": "None of the above",
+              "orm": "None of the above",
+              "tig": "None of the above"
+            },
+            "value": {
+              "conditions": "None of the above"
+            }
+          }
+        ],
+        "next": {
+          "if": [
+            {
+              "some": [
+                {
+                  "var": "conditions"
+                },
+                {
+                  "in": [
+                    {
+                      "var": ""
+                    },
+                    [
+                      "Chronic lung disease, moderate to severe asthma, or smoking",
+                      "Serious heart conditions",
+                      "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+                      "Severe obesity (Body Mass Index [BMI] > 40)",
+                      "Underlying conditions (diabetes, renal failure, or liver disease)",
+                      "Pregnancy"
+                    ]
+                  ]
+                }
+              ]
+            },
+            "msg5_t2",
+            {
+              "if": [
+                {
+                  "in": [
+                    {
+                      "var": "age_group"
+                    },
+                    [
+                      "65-69 years",
+                      "70-79 years",
+                      "80+"
+                    ]
+                  ]
+                },
+                "msg9_t2",
+                "msg8"
+              ]
+            }
+          ]
+        },
+        "actions": {
+          "next": {
+            "order": 1,
+            "text": {
+              "eng": "Next",
+              "amh": "Next",
+              "orm": "Next",
+              "tig": "Next"
+            }
+          }
+        }
+      },
+      "14": {
+        "type": "question",
+        "text": {
+          "eng": "Do you (they) have any of the following? (Check any)",
+          "amh": "Do you (they) have any of the following? (Check any)",
+          "orm": "Do you (they) have any of the following? (Check any)",
+          "tig": "Do you (they) have any of the following? (Check any)"
+        },
+        "value_key": "symptom_14",
+        "multiple_choice": [
+          {
+            "text": {
+              "eng": "Fever or feeling feverish (chills, sweating)",
+              "amh": "Fever or feeling feverish (chills, sweating)",
+              "orm": "Fever or feeling feverish (chills, sweating)",
+              "tig": "Fever or feeling feverish (chills, sweating)"
+            },
+            "value": {
+              "symptom_14": "Fever or feeling feverish (chills, sweating)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Cough",
+              "amh": "Cough",
+              "orm": "Cough",
+              "tig": "Cough"
+            },
+            "value": {
+              "symptom_14": "Cough"
+            }
+          },
+          {
+            "text": {
+              "eng": "Sore throat",
+              "amh": "Sore throat",
+              "orm": "Sore throat",
+              "tig": "Sore throat"
+            },
+            "value": {
+              "symptom_14": "Sore throat"
+            }
+          },
+          {
+            "text": {
+              "eng": "Muscle aches or body aches",
+              "amh": "Muscle aches or body aches",
+              "orm": "Muscle aches or body aches",
+              "tig": "Muscle aches or body aches"
+            },
+            "value": {
+              "symptom_14": "Muscle aches or body aches"
+            }
+          },
+          {
+            "text": {
+              "eng": "Vomiting or diarrhea",
+              "amh": "Vomiting or diarrhea",
+              "orm": "Vomiting or diarrhea",
+              "tig": "Vomiting or diarrhea"
+            },
+            "value": {
+              "symptom_14": "Vomiting or diarrhea"
+            }
+          },
+          {
+            "text": {
+              "eng": "Change in smell or taste",
+              "amh": "Change in smell or taste",
+              "orm": "Change in smell or taste",
+              "tig": "Change in smell or taste"
+            },
+            "value": {
+              "symptom_14": "Change in smell or taste"
+            }
+          },
+          {
+            "text": {
+              "eng": "Other symptoms",
+              "amh": "Other symptoms",
+              "orm": "Other symptoms",
+              "tig": "Other symptoms"
+            },
+            "value": {
+              "symptom_14": "Other symptoms"
+            }
+          }
+        ],
+        "next": {
+          "if": [
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "symptom_30"
+                    },
+                    "No trouble breathing"
+                  ]
+                },
+                {
+                  "all": [
+                    {
+                      "var": "symptom_14"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": ""
+                        },
+                        [
+                          "Other symptoms"
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "msg10",
+            {
+              "if": [
+                {
+                  "or": [
+                    {
+                      "all": [
+                        {
+                          "var": "symptom_14"
+                        },
+                        {
+                          "==": [
+                            {
+                              "var": ""
+                            },
+                            "Cough"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "all": [
+                        {
+                          "var": "symptom_14"
+                        },
+                        {
+                          "==": [
+                            {
+                              "var": ""
+                            },
+                            "Fever or feeling feverish (chills, sweating)"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "16",
+                {
+                  "or": [
+                    {
+                      "all": [
+                        {
+                          "var": "symptom_14"
+                        },
+                        {
+                          "in": [
+                            {
+                              "var": ""
+                            },
+                            [
+                              "Cough",
+                              "Fever or feeling feverish (chills, sweating)"
+                            ]
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "==": [
+                        {
+                          "var": "symptom_30"
+                        },
+                        "Mild or No trouble breathing"
+                      ]
+                    }
+                  ]
+                },
+                "19"
+              ]
+            },
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "symptom_30"
+                    },
+                    "No trouble breathing"
+                  ]
+                },
+                {
+                  "some": [
+                    {
+                      "var": "symptom_14"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": ""
+                        },
+                        [
+                          "Sore throat",
+                          "Muscle aches or body aches",
+                          "Vomiting or diarrhea",
+                          "Change in smell or taste"
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "31"
+          ]
+        },
+        "actions": {
+          "next": {
+            "order": 1,
+            "text": {
+              "eng": "Next",
+              "amh": "Next",
+              "orm": "Next",
+              "tig": "Next"
+            }
+          }
+        }
+      },
+      "16": {
+        "type": "question",
+        "text": {
+          "eng": "Do you (they) live in a long-term care facility or nursing home?",
+          "amh": "Do you (they) live in a long-term care facility or nursing home?",
+          "orm": "Do you (they) live in a long-term care facility or nursing home?",
+          "tig": "Do you (they) live in a long-term care facility or nursing home?"
+        },
+        "value_key": "live_long_term_care_facility",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "live_long_term_care_facility"
+                },
+                "Yes"
+              ]
+            },
+            "msg7",
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "live_long_term_care_facility"
+                    },
+                    "No"
+                  ]
+                },
+                {
+                  "if": [
+                    {
+                      "in": [
+                        {
+                          "var": "age_group"
+                        },
+                        [
+                          "19-29 years",
+                          "30-39 years",
+                          "40-49 years",
+                          "50-59 years",
+                          "60-64 years",
+                          "65-69 years",
+                          "70-79 years",
+                          "80+"
+                        ]
+                      ]
+                    },
+                    "17",
+                    "18"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "live_long_term_care_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "live_long_term_care_facility": "No"
+            }
+          }
+        }
+      },
+      "17": {
+        "type": "question",
+        "text": {
+          "eng": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "amh": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "orm": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "tig": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?"
+        },
+        "value_key": "work_medical_facility",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "work_medical_facility"
+                },
+                "Yes"
+              ]
+            },
+            "msg8_6_t2",
+            "18"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "work_medical_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "work_medical_facility": "No"
+            }
+          }
+        }
+      },
+      "18": {
+        "type": "question",
+        "text": {
+          "eng": "Do you have any of the following conditions (check any)",
+          "amh": "Do you have any of the following conditions (check any)",
+          "orm": "Do you have any of the following conditions (check any)",
+          "tig": "Do you have any of the following conditions (check any)"
+        },
+        "value_key": "conditions",
+        "multiple_choice": [
+          {
+            "text": {
+              "eng": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "amh": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "orm": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "tig": "Chronic lung disease, moderate to severe asthma, or smoking"
+            },
+            "value": {
+              "conditions": "Chronic lung disease, moderate to severe asthma, or smoking"
+            }
+          },
+          {
+            "text": {
+              "eng": "Serious heart conditions",
+              "amh": "Serious heart conditions",
+              "orm": "Serious heart conditions",
+              "tig": "Serious heart conditions"
+            },
+            "value": {
+              "conditions": "Serious heart conditions"
+            }
+          },
+          {
+            "text": {
+              "eng": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "amh": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "orm": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "tig": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)"
+            },
+            "value": {
+              "conditions": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "amh": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "orm": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "tig": "Severe obesity (Body Mass Index [BMI] > 40)"
+            },
+            "value": {
+              "conditions": "Severe obesity (Body Mass Index [BMI] > 40)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "amh": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "orm": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "tig": "Underlying conditions (diabetes, renal failure, or liver disease)"
+            },
+            "value": {
+              "conditions": "Underlying conditions (diabetes, renal failure, or liver disease)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Pregnancy",
+              "amh": "Pregnancy",
+              "orm": "Pregnancy",
+              "tig": "Pregnancy"
+            },
+            "value": {
+              "conditions": "Pregnancy"
+            },
+            "disabled": {
+              "if": [
+                {
+                  "==": [
+                    {
+                      "var": "gender"
+                    },
+                    "Male"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "text": {
+              "eng": "None of the above",
+              "amh": "None of the above",
+              "orm": "None of the above",
+              "tig": "None of the above"
+            },
+            "value": {
+              "conditions": "None of the above"
+            }
+          }
+        ],
+        "next": {
+          "if": [
+            {
+              "some": [
+                {
+                  "var": "conditions"
+                },
+                {
+                  "in": [
+                    {
+                      "var": ""
+                    },
+                    [
+                      "Chronic lung disease, moderate to severe asthma, or smoking",
+                      "Serious heart conditions",
+                      "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+                      "Severe obesity (Body Mass Index [BMI] > 40)",
+                      "Underlying conditions (diabetes, renal failure, or liver disease)",
+                      "Pregnancy"
+                    ]
+                  ]
+                }
+              ]
+            },
+            "msg5_t2",
+            {
+              "if": [
+                {
+                  "in": [
+                    {
+                      "var": "age_group"
+                    },
+                    [
+                      "65-69 years",
+                      "70-79 years",
+                      "80+"
+                    ]
+                  ]
+                },
+                "msg8_t2",
+                "msg8_t0"
+              ]
+            }
+          ]
+        },
+        "actions": {
+          "next": {
+            "order": 1,
+            "text": {
+              "eng": "Next",
+              "amh": "Next",
+              "orm": "Next",
+              "tig": "Next"
+            }
+          }
+        }
+      },
+      "19": {
+        "type": "question",
+        "text": {
+          "eng": "Do you (they) live in a long-term care facility or nursing home?",
+          "amh": "Do you (they) live in a long-term care facility or nursing home?",
+          "orm": "Do you (they) live in a long-term care facility or nursing home?",
+          "tig": "Do you (they) live in a long-term care facility or nursing home?"
+        },
+        "value_key": "live_long_term_care_facility",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "live_long_term_care_facility"
+                },
+                "Yes"
+              ]
+            },
+            "msg7",
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "live_long_term_care_facility"
+                    },
+                    "No"
+                  ]
+                },
+                {
+                  "if": [
+                    {
+                      "in": [
+                        {
+                          "var": "age_group"
+                        },
+                        [
+                          "65-69 years",
+                          "70-79 years",
+                          "80+"
+                        ]
+                      ]
+                    },
+                    "29",
+                    "21"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "live_long_term_care_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "live_long_term_care_facility": "No"
+            }
+          }
+        }
+      },
+      "20": {
+        "type": "question",
+        "text": {
+          "eng": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "amh": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "orm": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "tig": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?"
+        },
+        "value_key": "work_medical_facility",
+        "next": {
+          "or": [
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "work_medical_facility"
+                    },
+                    "Yes"
+                  ]
+                },
+                {
+                  "if": [
+                    {
+                      "some": [
+                        {
+                          "var": "conditions"
+                        },
+                        {
+                          "in": [
+                            {
+                              "var": ""
+                            },
+                            [
+                              "Chronic lung disease, moderate to severe asthma, or smoking",
+                              "Serious heart conditions",
+                              "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+                              "Severe obesity (Body Mass Index [BMI] > 40)",
+                              "Underlying conditions (diabetes, renal failure, or liver disease)"
+                            ]
+                          ]
+                        }
+                      ]
+                    },
+                    "msg5_6_t2",
+                    "msg9_6_t2"
+                  ]
+                }
+              ]
+            },
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "work_medical_facility"
+                    },
+                    "No"
+                  ]
+                },
+                {
+                  "if": [
+                    {
+                      "some": [
+                        {
+                          "var": "conditions"
+                        },
+                        {
+                          "in": [
+                            {
+                              "var": ""
+                            },
+                            [
+                              "Chronic lung disease, moderate to severe asthma, or smoking",
+                              "Serious heart conditions",
+                              "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+                              "Severe obesity (Body Mass Index [BMI] > 40)",
+                              "Underlying conditions (diabetes, renal failure, or liver disease)"
+                            ]
+                          ]
+                        }
+                      ]
+                    },
+                    "msg5_t2",
+                    "msg9_t2"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "work_medical_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "work_medical_facility": "No"
+            }
+          }
+        }
+      },
+      "21": {
+        "type": "question",
+        "text": {
+          "eng": "Do you have any of the following conditions (check any)",
+          "amh": "Do you have any of the following conditions (check any)",
+          "orm": "Do you have any of the following conditions (check any)",
+          "tig": "Do you have any of the following conditions (check any)"
+        },
+        "value_key": "conditions",
+        "multiple_choice": [
+          {
+            "text": {
+              "eng": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "amh": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "orm": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "tig": "Chronic lung disease, moderate to severe asthma, or smoking"
+            },
+            "value": {
+              "conditions": "Chronic lung disease, moderate to severe asthma, or smoking"
+            }
+          },
+          {
+            "text": {
+              "eng": "Serious heart conditions",
+              "amh": "Serious heart conditions",
+              "orm": "Serious heart conditions",
+              "tig": "Serious heart conditions"
+            },
+            "value": {
+              "conditions": "Serious heart conditions"
+            }
+          },
+          {
+            "text": {
+              "eng": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "amh": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "orm": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "tig": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)"
+            },
+            "value": {
+              "conditions": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "amh": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "orm": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "tig": "Severe obesity (Body Mass Index [BMI] > 40)"
+            },
+            "value": {
+              "conditions": "Severe obesity (Body Mass Index [BMI] > 40)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "amh": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "orm": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "tig": "Underlying conditions (diabetes, renal failure, or liver disease)"
+            },
+            "value": {
+              "conditions": "Underlying conditions (diabetes, renal failure, or liver disease)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Pregnancy",
+              "amh": "Pregnancy",
+              "orm": "Pregnancy",
+              "tig": "Pregnancy"
+            },
+            "value": {
+              "conditions": "Pregnancy"
+            },
+            "disabled": {
+              "if": [
+                {
+                  "==": [
+                    {
+                      "var": "gender"
+                    },
+                    "Male"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "text": {
+              "eng": "None of the above",
+              "amh": "None of the above",
+              "orm": "None of the above",
+              "tig": "None of the above"
+            },
+            "value": {
+              "conditions": "None of the above"
+            }
+          }
+        ],
+        "next": {
+          "or": [
+            {
+              "and": [
+                {
+                  "some": [
+                    {
+                      "var": "conditions"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": ""
+                        },
+                        [
+                          "Chronic lung disease, moderate to severe asthma, or smoking",
+                          "Serious heart conditions",
+                          "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+                          "Severe obesity (Body Mass Index [BMI] > 40)",
+                          "Underlying conditions (diabetes, renal failure, or liver disease)",
+                          "Pregnancy"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "in": [
+                    {
+                      "var": "age_group"
+                    },
+                    [
+                      "Younger than 2 years old",
+                      "2-4 years",
+                      "5-9 years",
+                      "10-18 years"
+                    ]
+                  ]
+                },
+                "msg5_t2"
+              ]
+            },
+            {
+              "and": [
+                {
+                  "some": [
+                    {
+                      "var": "conditions"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": ""
+                        },
+                        [
+                          "Chronic lung disease, moderate to severe asthma, or smoking",
+                          "Serious heart conditions",
+                          "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+                          "Severe obesity (Body Mass Index [BMI] > 40)",
+                          "Underlying conditions (diabetes, renal failure, or liver disease)",
+                          "Pregnancy"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "in": [
+                    {
+                      "var": "age_group"
+                    },
+                    [
+                      "19-29 years",
+                      "30-39 years",
+                      "40-49 years",
+                      "50-59 years",
+                      "60-64 years",
+                      "65-69 years",
+                      "70-79 years",
+                      "80+"
+                    ]
+                  ]
+                },
+                "22"
+              ]
+            },
+            {
+              "and": [
+                {
+                  "some": [
+                    {
+                      "var": "conditions"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": ""
+                        },
+                        [
+                          "None of the above"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "in": [
+                    {
+                      "var": "age_group"
+                    },
+                    [
+                      "19-29 years",
+                      "30-39 years",
+                      "40-49 years",
+                      "50-59 years",
+                      "60-64 years",
+                      "65-69 years",
+                      "70-79 years",
+                      "80+"
+                    ]
+                  ]
+                },
+                "23"
+              ]
+            },
+            {
+              "and": [
+                {
+                  "some": [
+                    {
+                      "var": "conditions"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": ""
+                        },
+                        [
+                          "None of the above"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "in": [
+                    {
+                      "var": "age_group"
+                    },
+                    [
+                      "Younger than 2 years old",
+                      "2-4 years",
+                      "5-9 years",
+                      "10-18 years"
+                    ]
+                  ]
+                },
+                "msg8_t0"
+              ]
+            }
+          ]
+        },
+        "actions": {
+          "next": {
+            "order": 1,
+            "text": {
+              "eng": "Next",
+              "amh": "Next",
+              "orm": "Next",
+              "tig": "Next"
+            }
+          }
+        }
+      },
+      "22": {
+        "type": "question",
+        "text": {
+          "eng": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "amh": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "orm": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "tig": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?"
+        },
+        "value_key": "work_medical_facility",
+        "next": {
+          "if": [
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "work_medical_facility"
+                    },
+                    "Yes"
+                  ]
+                },
+                {
+                  "some": [
+                    {
+                      "var": "conditions"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": ""
+                        },
+                        [
+                          "Chronic lung disease, moderate to severe asthma, or smoking",
+                          "Serious heart conditions",
+                          "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+                          "Severe obesity (Body Mass Index [BMI] > 40)",
+                          "Underlying conditions (diabetes, renal failure, or liver disease)",
+                          "Pregnant"
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "msg5_6_t2",
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "work_medical_facility"
+                    },
+                    "No"
+                  ]
+                },
+                {
+                  "some": [
+                    {
+                      "var": "conditions"
+                    },
+                    {
+                      "in": [
+                        {
+                          "var": ""
+                        },
+                        [
+                          "Chronic lung disease, moderate to severe asthma, or smoking",
+                          "Serious heart conditions",
+                          "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+                          "Severe obesity (Body Mass Index [BMI] > 40)",
+                          "Underlying conditions (diabetes, renal failure, or liver disease)",
+                          "Pregnant"
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "msg5_t2"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "work_medical_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "work_medical_facility": "No"
+            }
+          }
+        }
+      },
+      "23": {
+        "type": "question",
+        "text": {
+          "eng": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "amh": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "orm": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?",
+          "tig": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or part of your work?"
+        },
+        "value_key": "work_medical_facility",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "work_medical_facility"
+                },
+                "Yes"
+              ]
+            },
+            "msg8_6_t2",
+            "msg8_t0"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "work_medical_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "work_medical_facility": "No"
+            }
+          }
+        }
+      },
+      "28": {
+        "type": "question",
+        "text": {
+          "eng": "What is your (their) gender?",
+          "amh": "What is your (their) gender?",
+          "orm": "What is your (their) gender?",
+          "tig": "What is your (their) gender?"
+        },
+        "value_key": "gender",
+        "next": "5",
+        "actions": {
+          "male": {
+            "order": 1,
+            "text": {
+              "eng": "Male",
+              "amh": "Male",
+              "orm": "Male",
+              "tig": "Male"
+            },
+            "value": {
+              "gender": "Male"
+            }
+          },
+          "female": {
+            "order": 2,
+            "text": {
+              "eng": "Female",
+              "amh": "Female",
+              "orm": "Female",
+              "tig": "Female"
+            },
+            "value": {
+              "gender": "Female"
+            }
+          }
+        }
+      },
+      "29": {
+        "type": "question",
+        "text": {
+          "eng": "Do you have any of the following conditions (check any)",
+          "amh": "Do you have any of the following conditions (check any)",
+          "orm": "Do you have any of the following conditions (check any)",
+          "tig": "Do you have any of the following conditions (check any)"
+        },
+        "value_key": "conditions",
+        "multiple_choice": [
+          {
+            "text": {
+              "eng": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "amh": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "orm": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "tig": "Chronic lung disease, moderate to severe asthma, or smoking"
+            },
+            "value": {
+              "conditions": "Chronic lung disease, moderate to severe asthma, or smoking"
+            }
+          },
+          {
+            "text": {
+              "eng": "Serious heart conditions",
+              "amh": "Serious heart conditions",
+              "orm": "Serious heart conditions",
+              "tig": "Serious heart conditions"
+            },
+            "value": {
+              "conditions": "Serious heart conditions"
+            }
+          },
+          {
+            "text": {
+              "eng": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "amh": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "orm": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "tig": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)"
+            },
+            "value": {
+              "conditions": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "amh": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "orm": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "tig": "Severe obesity (Body Mass Index [BMI] > 40)"
+            },
+            "value": {
+              "conditions": "Severe obesity (Body Mass Index [BMI] > 40)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "amh": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "orm": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "tig": "Underlying conditions (diabetes, renal failure, or liver disease)"
+            },
+            "value": {
+              "conditions": "Underlying conditions (diabetes, renal failure, or liver disease)"
+            }
+          },
+          {
+            "text": {
+              "eng": "None of the above",
+              "amh": "None of the above",
+              "orm": "None of the above",
+              "tig": "None of the above"
+            },
+            "value": {
+              "conditions": "None of the above"
+            }
+          }
+        ],
+        "next": "20",
+        "actions": {
+          "next": {
+            "order": 1,
+            "text": {
+              "eng": "Next",
+              "amh": "Next",
+              "orm": "Next",
+              "tig": "Next"
+            }
+          }
+        }
+      },
+      "30": {
+        "type": "question",
+        "text": {
+          "eng": "How is your (their) breathing? Which of these are you (they) experiencing?\r\n  \u2022 Severe gasping for air or cannot talk without catching your breath\r\n  \u2022 Mild: you can get enough air in your lungs but your chest feels tight when you take a deep breath",
+          "amh": "How is your (their) breathing? Which of these are you (they) experiencing?\r\n  \u2022 Severe gasping for air or cannot talk without catching your breath\r\n  \u2022 Mild: you can get enough air in your lungs but your chest feels tight when you take a deep breath",
+          "orm": "How is your (their) breathing? Which of these are you (they) experiencing?\r\n  \u2022 Severe gasping for air or cannot talk without catching your breath\r\n  \u2022 Mild: you can get enough air in your lungs but your chest feels tight when you take a deep breath",
+          "tig": "How is your (their) breathing? Which of these are you (they) experiencing?\r\n  \u2022 Severe gasping for air or cannot talk without catching your breath\r\n  \u2022 Mild: you can get enough air in your lungs but your chest feels tight when you take a deep breath"
+        },
+        "value_key": "symptom_30",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "symptom_30"
+                },
+                "Severe"
+              ]
+            },
+            "msg4",
+            "8"
+          ]
+        },
+        "actions": {
+          "severe": {
+            "order": 1,
+            "text": {
+              "eng": "Severe",
+              "amh": "Severe",
+              "orm": "Severe",
+              "tig": "Severe"
+            },
+            "value": {
+              "symptom_30": "Severe"
+            }
+          },
+          "mild": {
+            "order": 2,
+            "text": {
+              "eng": "Mild or No trouble breathing",
+              "amh": "Mild or No trouble breathing",
+              "orm": "Mild or No trouble breathing",
+              "tig": "Mild or No trouble breathing"
+            },
+            "value": {
+              "symptom_30": "Mild or No trouble breathing"
+            }
+          },
+          "no_trouble": {
+            "order": 3,
+            "text": {
+              "eng": "No trouble breathing",
+              "amh": "No trouble breathing",
+              "orm": "No trouble breathing",
+              "tig": "No trouble breathing"
+            },
+            "value": {
+              "symptom_30": "No trouble breathing"
+            }
+          }
+        }
+      },
+      "31": {
+        "type": "question",
+        "text": {
+          "eng": "Do you (they) live in a long-term care facility or nursing home?",
+          "amh": "Do you (they) live in a long-term care facility or nursing home?",
+          "orm": "Do you (they) live in a long-term care facility or nursing home?",
+          "tig": "Do you (they) live in a long-term care facility or nursing home?"
+        },
+        "value_key": "live_long_term_care_facility",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "live_long_term_care_facility"
+                },
+                "Yes"
+              ]
+            },
+            "msg7",
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "live_long_term_care_facility"
+                    },
+                    "No"
+                  ]
+                },
+                {
+                  "if": [
+                    {
+                      "in": [
+                        {
+                          "var": "age_group"
+                        },
+                        [
+                          "19-29 years",
+                          "30-39 years",
+                          "40-49 years",
+                          "50-59 years",
+                          "60-64 years",
+                          "65-69 years",
+                          "70-79 years",
+                          "80+"
+                        ]
+                      ]
+                    },
+                    "32",
+                    "33"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "live_long_term_care_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "live_long_term_care_facility": "No"
+            }
+          }
+        }
+      },
+      "32": {
+        "type": "question",
+        "text": {
+          "eng": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or as part of your work?",
+          "amh": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or as part of your work?",
+          "orm": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or as part of your work?",
+          "tig": "In the last two weeks have you (they) worked or volunteered in a hospital, emergency room, clinic, medical office, long-term care facility or nursing home, ambulance service, first responder services, or any healthcare setting, or taken care of patients as a student or as part of your work?"
+        },
+        "value_key": "work_medical_facility",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "work_medical_facility"
+                },
+                "Yes"
+              ]
+            },
+            "msg6",
+            "33"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "work_medical_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "work_medical_facility": "No"
+            }
+          }
+        }
+      },
+      "33": {
+        "type": "question",
+        "text": {
+          "eng": "Do you have any of the following conditions (check any)",
+          "amh": "Do you have any of the following conditions (check any)",
+          "orm": "Do you have any of the following conditions (check any)",
+          "tig": "Do you have any of the following conditions (check any)"
+        },
+        "value_key": "conditions",
+        "multiple_choice": [
+          {
+            "text": {
+              "eng": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "amh": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "orm": "Chronic lung disease, moderate to severe asthma, or smoking",
+              "tig": "Chronic lung disease, moderate to severe asthma, or smoking"
+            },
+            "value": {
+              "conditions": "Chronic lung disease, moderate to severe asthma, or smoking"
+            }
+          },
+          {
+            "text": {
+              "eng": "Serious heart conditions",
+              "amh": "Serious heart conditions",
+              "orm": "Serious heart conditions",
+              "tig": "Serious heart conditions"
+            },
+            "value": {
+              "conditions": "Serious heart conditions"
+            }
+          },
+          {
+            "text": {
+              "eng": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "amh": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "orm": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+              "tig": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)"
+            },
+            "value": {
+              "conditions": "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "amh": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "orm": "Severe obesity (Body Mass Index [BMI] > 40)",
+              "tig": "Severe obesity (Body Mass Index [BMI] > 40)"
+            },
+            "value": {
+              "conditions": "Severe obesity (Body Mass Index [BMI] > 40)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "amh": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "orm": "Underlying conditions (diabetes, renal failure, or liver disease)",
+              "tig": "Underlying conditions (diabetes, renal failure, or liver disease)"
+            },
+            "value": {
+              "conditions": "Underlying conditions (diabetes, renal failure, or liver disease)"
+            }
+          },
+          {
+            "text": {
+              "eng": "Pregnancy",
+              "amh": "Pregnancy",
+              "orm": "Pregnancy",
+              "tig": "Pregnancy"
+            },
+            "value": {
+              "conditions": "Pregnancy"
+            },
+            "disabled": {
+              "if": [
+                {
+                  "==": [
+                    {
+                      "var": "gender"
+                    },
+                    "Male"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "text": {
+              "eng": "None of the above",
+              "amh": "None of the above",
+              "orm": "None of the above",
+              "tig": "None of the above"
+            },
+            "value": {
+              "conditions": "None of the above"
+            }
+          }
+        ],
+        "next": {
+          "if": [
+            {
+              "some": [
+                {
+                  "var": "conditions"
+                },
+                {
+                  "in": [
+                    {
+                      "var": ""
+                    },
+                    [
+                      "Chronic lung disease, moderate to severe asthma, or smoking",
+                      "Serious heart conditions",
+                      "Weakened immune system (cancer treatment, prolonged use of steroids, transplant, or HIV\/AIDS)",
+                      "Severe obesity (Body Mass Index [BMI] > 40)",
+                      "Underlying conditions (diabetes, renal failure, or liver disease)",
+                      "Pregnancy"
+                    ]
+                  ]
+                }
+              ]
+            },
+            "msg9_t2",
+            {
+              "if": [
+                {
+                  "in": [
+                    {
+                      "var": "age_group"
+                    },
+                    [
+                      "19-29 years",
+                      "30-39 years",
+                      "40-49 years",
+                      "50-59 years",
+                      "60-64 years",
+                      "65-69 years",
+                      "70-79 years",
+                      "80+"
+                    ]
+                  ]
+                },
+                "17",
+                "18"
+              ]
+            }
+          ]
+        },
+        "actions": {
+          "next": {
+            "order": 1,
+            "text": {
+              "eng": "Next",
+              "amh": "Next",
+              "orm": "Next",
+              "tig": "Next"
+            }
+          }
+        }
+      },
+      "34": {
+        "type": "question",
+        "text": {
+          "eng": "Are you answering for yourself or someone else?",
+          "amh": "Are you answering for yourself or someone else?",
+          "orm": "Are you answering for yourself or someone else?",
+          "tig": "Are you answering for yourself or someone else?"
+        },
+        "value_key": "answering_for",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "answering_for"
+                },
+                "Myself"
+              ]
+            },
+            "35",
+            "35"
+          ]
+        },
+        "actions": {
+          "myself": {
+            "order": 1,
+            "text": {
+              "eng": "Myself",
+              "amh": "Myself",
+              "orm": "Myself",
+              "tig": "Myself"
+            },
+            "value": {
+              "answering_for": "Myself"
+            }
+          },
+          "someone_else": {
+            "order": 2,
+            "text": {
+              "eng": "Someone else",
+              "amh": "Someone else",
+              "orm": "Someone else",
+              "tig": "Someone else"
+            },
+            "value": {
+              "answering_for": "Someone else"
+            }
+          }
+        }
+      },
+      "35": {
+        "type": "question",
+        "text": {
+          "eng": "What is your (their) age?",
+          "amh": "What is your (their) age?",
+          "orm": "What is your (their) age?",
+          "tig": "What is your (their) age?"
+        },
+        "value_key": "age_group",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "age_group"
+                },
+                "Younger than 2 years old"
+              ]
+            },
+            "msg3",
+            "36"
+          ]
+        },
+        "actions": {
+          "younger_than_2_years_old": {
+            "order": 1,
+            "text": {
+              "eng": "Younger than 2 years old",
+              "amh": "Younger than 2 years old",
+              "orm": "Younger than 2 years old",
+              "tig": "Younger than 2 years old"
+            },
+            "value": {
+              "age_group": "Younger than 2 years old"
+            }
+          },
+          "2_4_years": {
+            "order": 2,
+            "text": {
+              "eng": "2-4 years",
+              "amh": "2-4 years",
+              "orm": "2-4 years",
+              "tig": "2-4 years"
+            },
+            "value": {
+              "age_group": "2-4 years"
+            }
+          },
+          "5_9_years": {
+            "order": 3,
+            "text": {
+              "eng": "5-9 years",
+              "amh": "5-9 years",
+              "orm": "5-9 years",
+              "tig": "5-9 years"
+            },
+            "value": {
+              "age_group": "5-9 years"
+            }
+          },
+          "10_18_years": {
+            "order": 4,
+            "text": {
+              "eng": "10-18 years",
+              "amh": "10-18 years",
+              "orm": "10-18 years",
+              "tig": "10-18 years"
+            },
+            "value": {
+              "age_group": "10-18 years"
+            }
+          },
+          "19_29_years": {
+            "order": 4,
+            "text": {
+              "eng": "19-29 years",
+              "amh": "19-29 years",
+              "orm": "19-29 years",
+              "tig": "19-29 years"
+            },
+            "value": {
+              "age_group": "19-29 years"
+            }
+          },
+          "30_39_years": {
+            "order": 5,
+            "text": {
+              "eng": "30-39 years",
+              "amh": "30-39 years",
+              "orm": "30-39 years",
+              "tig": "30-39 years"
+            },
+            "value": {
+              "age_group": "30-39 years"
+            }
+          },
+          "40_49_years": {
+            "order": 6,
+            "text": {
+              "eng": "40-49 years",
+              "amh": "40-49 years",
+              "orm": "40-49 years",
+              "tig": "40-49 years"
+            },
+            "value": {
+              "age_group": "40-49 years"
+            }
+          },
+          "50_59_years": {
+            "order": 7,
+            "text": {
+              "eng": "50-59 years",
+              "amh": "50-59 years",
+              "orm": "50-59 years",
+              "tig": "50-59 years"
+            },
+            "value": {
+              "age_group": "50-59 years"
+            }
+          },
+          "60_64_years": {
+            "order": 8,
+            "text": {
+              "eng": "60-64 years",
+              "amh": "60-64 years",
+              "orm": "60-64 years",
+              "tig": "60-64 years"
+            },
+            "value": {
+              "age_group": "60-64 years"
+            }
+          },
+          "65_69_years": {
+            "order": 9,
+            "text": {
+              "eng": "65-69 years",
+              "amh": "65-69 years",
+              "orm": "65-69 years",
+              "tig": "65-69 years"
+            },
+            "value": {
+              "age_group": "65-69 years"
+            }
+          },
+          "70_79_years": {
+            "order": 10,
+            "text": {
+              "eng": "70-79 years",
+              "amh": "70-79 years",
+              "orm": "70-79 years",
+              "tig": "70-79 years"
+            },
+            "value": {
+              "age_group": "70-79 years"
+            }
+          },
+          "80_": {
+            "order": 11,
+            "text": {
+              "eng": "80+",
+              "amh": "80+",
+              "orm": "80+",
+              "tig": "80+"
+            },
+            "value": {
+              "age_group": "80+"
+            }
+          }
+        }
+      },
+      "36": {
+        "type": "question",
+        "text": {
+          "eng": "In the last two weeks, did you (they) care for or have close contact with someone diagnosed with COVID-19?",
+          "amh": "In the last two weeks, did you (they) care for or have close contact with someone diagnosed with COVID-19?",
+          "orm": "In the last two weeks, did you (they) care for or have close contact with someone diagnosed with COVID-19?",
+          "tig": "In the last two weeks, did you (they) care for or have close contact with someone diagnosed with COVID-19?"
+        },
+        "value_key": "close_contact_with_diagnosed",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "close_contact_with_diagnosed"
+                },
+                "Yes"
+              ]
+            },
+            "37",
+            "msg1_16_t0"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "close_contact_with_diagnosed": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "close_contact_with_diagnosed": "No"
+            }
+          }
+        }
+      },
+      "37": {
+        "type": "question",
+        "text": {
+          "eng": "Do you (they) live in a long-term care facility or nursing home?",
+          "amh": "Do you (they) live in a long-term care facility or nursing home?",
+          "orm": "Do you (they) live in a long-term care facility or nursing home?",
+          "tig": "Do you (they) live in a long-term care facility or nursing home?"
+        },
+        "value_key": "live_long_term_care_facility",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "live_long_term_care_facility"
+                },
+                "Yes"
+              ]
+            },
+            "msg18_14_t0",
+            "38"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "live_long_term_care_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "live_long_term_care_facility": "No"
+            }
+          }
+        }
+      },
+      "38": {
+        "type": "question",
+        "text": {
+          "eng": "In the last two weeks have you (they) worked or volunteered in a health care facility?",
+          "amh": "In the last two weeks have you (they) worked or volunteered in a health care facility?",
+          "orm": "In the last two weeks have you (they) worked or volunteered in a health care facility?",
+          "tig": "In the last two weeks have you (they) worked or volunteered in a health care facility?"
+        },
+        "value_key": "work_medical_facility",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "work_medical_facility"
+                },
+                "Yes"
+              ]
+            },
+            "39",
+            "msg18_t0"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "work_medical_facility": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "work_medical_facility": "No"
+            }
+          }
+        }
+      },
+      "39": {
+        "type": "question",
+        "text": {
+          "eng": "Did you (they) wear all recommended personal protective equipment while you (they) were caring for or in close contact with someone diagnosed with COVID-19?",
+          "amh": "Did you (they) wear all recommended personal protective equipment while you (they) were caring for or in close contact with someone diagnosed with COVID-19?",
+          "orm": "Did you (they) wear all recommended personal protective equipment while you (they) were caring for or in close contact with someone diagnosed with COVID-19?",
+          "tig": "Did you (they) wear all recommended personal protective equipment while you (they) were caring for or in close contact with someone diagnosed with COVID-19?"
+        },
+        "value_key": "wore_protective_equipment_while_caring",
+        "next": {
+          "if": [
+            {
+              "==": [
+                {
+                  "var": "wore_protective_equipment_while_caring"
+                },
+                "Yes"
+              ]
+            },
+            "msg17_t1",
+            "msg15_t1"
+          ]
+        },
+        "actions": {
+          "yes": {
+            "order": 1,
+            "text": {
+              "eng": "Yes",
+              "amh": "Yes",
+              "orm": "Yes",
+              "tig": "Yes"
+            },
+            "value": {
+              "wore_protective_equipment_while_caring": "Yes"
+            }
+          },
+          "no": {
+            "order": 2,
+            "text": {
+              "eng": "No",
+              "amh": "No",
+              "orm": "No",
+              "tig": "No"
+            },
+            "value": {
+              "wore_protective_equipment_while_caring": "No"
+            }
+          }
+        }
+      },
+      "msg0": {
+        "type": "message",
+        "text": {
+          "eng": "Please make a selection so I can help give you care advice.\r\n\r\nYou have not made a selection. Please start again and select options for each question so that I can help give you care advice.",
+          "amh": "Please make a selection so I can help give you care advice.\r\n\r\nYou have not made a selection. Please start again and select options for each question so that I can help give you care advice.",
+          "orm": "Please make a selection so I can help give you care advice.\r\n\r\nYou have not made a selection. Please start again and select options for each question so that I can help give you care advice.",
+          "tig": "Please make a selection so I can help give you care advice.\r\n\r\nYou have not made a selection. Please start again and select options for each question so that I can help give you care advice."
+        }
+      },
+      "msg1": {
+        "type": "message",
+        "text": {
+          "eng": "Sounds like you are feeling ok.\r\n\r\nLearn more about COVID 19 and what you can do to stay safe on the CDC website.",
+          "amh": "Sounds like you are feeling ok.\r\n\r\nLearn more about COVID 19 and what you can do to stay safe on the CDC website.",
+          "orm": "Sounds like you are feeling ok.\r\n\r\nLearn more about COVID 19 and what you can do to stay safe on the CDC website.",
+          "tig": "Sounds like you are feeling ok.\r\n\r\nLearn more about COVID 19 and what you can do to stay safe on the CDC website."
+        }
+      },
+      "msg1_16_t0": {
+        "type": "message",
+        "text": {
+          "eng": "Sounds like you are feeling ok.\r\n\r\nLearn more about COVID 19 and what you can do to stay safe on the CDC website.\r\n\r\nMonitor for symptoms.\r\n\r\nWatch for COVID-19 symptoms. If you develop symptoms, call your healthcare provider, clinician advice line, or telemedicine provider. Learn more about COVID-19 and steps you can take to protect yourself and others on the CDC website.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "amh": "Sounds like you are feeling ok.\r\n\r\nLearn more about COVID 19 and what you can do to stay safe on the CDC website.\r\n\r\nMonitor for symptoms.\r\n\r\nWatch for COVID-19 symptoms. If you develop symptoms, call your healthcare provider, clinician advice line, or telemedicine provider. Learn more about COVID-19 and steps you can take to protect yourself and others on the CDC website.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "orm": "Sounds like you are feeling ok.\r\n\r\nLearn more about COVID 19 and what you can do to stay safe on the CDC website.\r\n\r\nMonitor for symptoms.\r\n\r\nWatch for COVID-19 symptoms. If you develop symptoms, call your healthcare provider, clinician advice line, or telemedicine provider. Learn more about COVID-19 and steps you can take to protect yourself and others on the CDC website.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "tig": "Sounds like you are feeling ok.\r\n\r\nLearn more about COVID 19 and what you can do to stay safe on the CDC website.\r\n\r\nMonitor for symptoms.\r\n\r\nWatch for COVID-19 symptoms. If you develop symptoms, call your healthcare provider, clinician advice line, or telemedicine provider. Learn more about COVID-19 and steps you can take to protect yourself and others on the CDC website.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again."
+        }
+      },
+      "msg3": {
+        "type": "message",
+        "text": {
+          "eng": "This Coronavirus Self-Checker is for people who are at least 2 years old.\r\n\r\nVisit the CDC website to get information on COVID-19 and children.",
+          "amh": "This Coronavirus Self-Checker is for people who are at least 2 years old.\r\n\r\nVisit the CDC website to get information on COVID-19 and children.",
+          "orm": "This Coronavirus Self-Checker is for people who are at least 2 years old.\r\n\r\nVisit the CDC website to get information on COVID-19 and children.",
+          "tig": "This Coronavirus Self-Checker is for people who are at least 2 years old.\r\n\r\nVisit the CDC website to get information on COVID-19 and children."
+        }
+      },
+      "msg4": {
+        "type": "message",
+        "text": {
+          "eng": "Urgent medical attention may be needed. Please call 911 or go to the Emergency Department.\r\n\r\nBased on your symptoms, urgent medical attention may be needed. Please call 911 or go to the nearest emergency department.\r\n\r\nTell the 911 operator or emergency staff if you have had contact with someone with COVID-19 or if you have recently been to an area where COVID-19 is spreading.",
+          "amh": "Urgent medical attention may be needed. Please call 911 or go to the Emergency Department.\r\n\r\nBased on your symptoms, urgent medical attention may be needed. Please call 911 or go to the nearest emergency department.\r\n\r\nTell the 911 operator or emergency staff if you have had contact with someone with COVID-19 or if you have recently been to an area where COVID-19 is spreading.",
+          "orm": "Urgent medical attention may be needed. Please call 911 or go to the Emergency Department.\r\n\r\nBased on your symptoms, urgent medical attention may be needed. Please call 911 or go to the nearest emergency department.\r\n\r\nTell the 911 operator or emergency staff if you have had contact with someone with COVID-19 or if you have recently been to an area where COVID-19 is spreading.",
+          "tig": "Urgent medical attention may be needed. Please call 911 or go to the Emergency Department.\r\n\r\nBased on your symptoms, urgent medical attention may be needed. Please call 911 or go to the nearest emergency department.\r\n\r\nTell the 911 operator or emergency staff if you have had contact with someone with COVID-19 or if you have recently been to an area where COVID-19 is spreading."
+        }
+      },
+      "msg5": {
+        "type": "message",
+        "text": {
+          "eng": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.",
+          "amh": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.",
+          "orm": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.",
+          "tig": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick."
+        }
+      },
+      "msg5_t2": {
+        "type": "message",
+        "text": {
+          "eng": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing",
+          "amh": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing",
+          "orm": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing",
+          "tig": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing"
+        }
+      },
+      "msg5_6_t2": {
+        "type": "message",
+        "text": {
+          "eng": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nContact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill.",
+          "amh": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nContact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill.",
+          "orm": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nContact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill.",
+          "tig": "Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. You also have medical conditions that may put you at more risk of illness. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nContact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill."
+        }
+      },  
+      "msg6": {
+        "type": "message",
+        "text": {
+          "eng": "Contact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill.",
+          "amh": "Contact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill.",
+          "orm": "Contact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill.",
+          "tig": "Contact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill."
+        }
+      },
+      "msg7": {
+        "type": "message",
+        "text": {
+          "eng": "Contact a healthcare provider in the long-term care facility where you live.\r\n\r\nLiving in a long-term care facility or nursing home may put you at a higher risk for severe illness. Tell a caregiver at the facility that you are sick and need to see a medical provider as soon as possible.\r\nHelp protect others from getting sick:\r\n  \u2022 Stay in your room except to get medical care\r\n  \u2022 Cover your coughs and sneezes\r\n  \u2022 Clean your hands often",
+          "amh": "Contact a healthcare provider in the long-term care facility where you live.\r\n\r\nLiving in a long-term care facility or nursing home may put you at a higher risk for severe illness. Tell a caregiver at the facility that you are sick and need to see a medical provider as soon as possible.\r\nHelp protect others from getting sick:\r\n  \u2022 Stay in your room except to get medical care\r\n  \u2022 Cover your coughs and sneezes\r\n  \u2022 Clean your hands often",
+          "orm": "Contact a healthcare provider in the long-term care facility where you live.\r\n\r\nLiving in a long-term care facility or nursing home may put you at a higher risk for severe illness. Tell a caregiver at the facility that you are sick and need to see a medical provider as soon as possible.\r\nHelp protect others from getting sick:\r\n  \u2022 Stay in your room except to get medical care\r\n  \u2022 Cover your coughs and sneezes\r\n  \u2022 Clean your hands often",
+          "tig": "Contact a healthcare provider in the long-term care facility where you live.\r\n\r\nLiving in a long-term care facility or nursing home may put you at a higher risk for severe illness. Tell a caregiver at the facility that you are sick and need to see a medical provider as soon as possible.\r\nHelp protect others from getting sick:\r\n  \u2022 Stay in your room except to get medical care\r\n  \u2022 Cover your coughs and sneezes\r\n  \u2022 Clean your hands often"
+        }
+      },
+      "msg8": {
+        "type": "message",
+        "text": {
+          "eng": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.",
+          "amh": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.",
+          "orm": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.",
+          "tig": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick."
+        }
+      },
+      "msg8_t0": {
+        "type": "message",
+        "text": {
+          "eng": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "amh": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "orm": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "tig": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again."
+        }
+      }, 
+      "msg8_6_t2": {
+        "type": "message",
+        "text": {
+          "eng": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider.",
+          "amh": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider.",
+          "orm": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider.",
+          "tig": "Stay home and take care of yourself. Call your provider if you get worse.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptoms that may be related to COVID-19. Stay home and take care of yourself. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider."
+        }
+      },
+      "msg9": {
+        "type": "message",
+        "text": {
+          "eng": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.",
+          "amh": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.",
+          "orm": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.",
+          "tig": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick."
+        }
+      },
+      "msg9_t2": {
+        "type": "message",
+        "text": {
+          "eng": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider.",
+          "amh": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider.",
+          "orm": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider.",
+          "tig": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider."
+        }
+      },
+      "msg9_6_t2": {
+        "type": "message",
+        "text": {
+          "eng": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nContact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider.",
+          "amh": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nContact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider.",
+          "orm": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nContact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider.",
+          "tig": "Stay home and take care of yourself. Call a medical provider within 24 hours.\r\n\r\nSorry you\u2019re feeling ill. You have one or more symptom(s) that may be related to COVID-19. Stay home and take care of yourself. Call your healthcare provider, clinician advice line, or telemedicine provider within 24 hours. Start home isolation. This means stay home except to get medical care, and do not go to work, school, or public areas. Do not use public transportation or ride sharing. Be sure to get care if you feel worse or you think it is an emergency.\r\n\r\nRead important information about caring for yourself or someone else who is sick and follow these steps to help protect others from getting sick.\r\n\r\nContact the occupational health provider at your workplace immediately.\r\n\r\nPlease contact the occupational health provider (or supervisor) in your healthcare facility as soon as possible and let them know you\u2019re feeling ill.\r\n\r\nTalk to your provider about COVID-19 testing\r\n\r\nYour answers suggest you may need to get tested for COVID-19. Talk to your medical provider or visit your health department\u2019s website for more information. Testing access may vary by location and provider."
+        }
+      },
+      "msg10": {
+        "type": "message",
+        "text": {
+          "eng": "Sorry you\u2019re feeling ill. Stay at home and monitor your symptoms. Call your provider if you get worse.\r\n\r\nWatch for COVID-19 symptoms. If you develop any of these symptoms or if you start to feel worse, call your healthcare provider, clinician advice line, or telemedicine provider.\r\n\r\nHere are some steps that may help you feel better:\r\n  \u2022 Stay at home and rest.\r\n  \u2022 Drink plenty of water and other clear liquids to prevent fluid loss (dehydration).\r\n  \u2022 Cover your coughs and sneezes.\r\n  \u2022 Clean your hands often.",
+          "amh": "Sorry you\u2019re feeling ill. Stay at home and monitor your symptoms. Call your provider if you get worse.\r\n\r\nWatch for COVID-19 symptoms. If you develop any of these symptoms or if you start to feel worse, call your healthcare provider, clinician advice line, or telemedicine provider.\r\n\r\nHere are some steps that may help you feel better:\r\n  \u2022 Stay at home and rest.\r\n  \u2022 Drink plenty of water and other clear liquids to prevent fluid loss (dehydration).\r\n  \u2022 Cover your coughs and sneezes.\r\n  \u2022 Clean your hands often.",
+          "orm": "Sorry you\u2019re feeling ill. Stay at home and monitor your symptoms. Call your provider if you get worse.\r\n\r\nWatch for COVID-19 symptoms. If you develop any of these symptoms or if you start to feel worse, call your healthcare provider, clinician advice line, or telemedicine provider.\r\n\r\nHere are some steps that may help you feel better:\r\n  \u2022 Stay at home and rest.\r\n  \u2022 Drink plenty of water and other clear liquids to prevent fluid loss (dehydration).\r\n  \u2022 Cover your coughs and sneezes.\r\n  \u2022 Clean your hands often.",
+          "tig": "Sorry you\u2019re feeling ill. Stay at home and monitor your symptoms. Call your provider if you get worse.\r\n\r\nWatch for COVID-19 symptoms. If you develop any of these symptoms or if you start to feel worse, call your healthcare provider, clinician advice line, or telemedicine provider.\r\n\r\nHere are some steps that may help you feel better:\r\n  \u2022 Stay at home and rest.\r\n  \u2022 Drink plenty of water and other clear liquids to prevent fluid loss (dehydration).\r\n  \u2022 Cover your coughs and sneezes.\r\n  \u2022 Clean your hands often."
+        }
+      },
+      "msg15_t1": {
+        "type": "message",
+        "text": {
+          "eng": "Contact the occupational health provider at your workplace.\r\n\r\nTell your occupational health provider (or supervisor) that you have been in contact with someone diagnosed with COVID-19. You may be asked to wear a mask to protect yourself and those around you. Check your temperature twice a day for 14 days. Watch for COVID-19 symptoms such as cough, fever, and difficulty breathing.\r\nLearn more about COVID-19 and steps you can take to protect yourself and others on the CDC website.\r\n\r\nInformation about COVID-19 testing\r\n\r\nFor more information about testing for COVID-19, call your medical provider or visit your health department\u2019s website.",
+          "amh": "Contact the occupational health provider at your workplace.\r\n\r\nTell your occupational health provider (or supervisor) that you have been in contact with someone diagnosed with COVID-19. You may be asked to wear a mask to protect yourself and those around you. Check your temperature twice a day for 14 days. Watch for COVID-19 symptoms such as cough, fever, and difficulty breathing.\r\nLearn more about COVID-19 and steps you can take to protect yourself and others on the CDC website.\r\n\r\nInformation about COVID-19 testing\r\n\r\nFor more information about testing for COVID-19, call your medical provider or visit your health department\u2019s website.",
+          "orm": "Contact the occupational health provider at your workplace.\r\n\r\nTell your occupational health provider (or supervisor) that you have been in contact with someone diagnosed with COVID-19. You may be asked to wear a mask to protect yourself and those around you. Check your temperature twice a day for 14 days. Watch for COVID-19 symptoms such as cough, fever, and difficulty breathing.\r\nLearn more about COVID-19 and steps you can take to protect yourself and others on the CDC website.\r\n\r\nInformation about COVID-19 testing\r\n\r\nFor more information about testing for COVID-19, call your medical provider or visit your health department\u2019s website.",
+          "tig": "Contact the occupational health provider at your workplace.\r\n\r\nTell your occupational health provider (or supervisor) that you have been in contact with someone diagnosed with COVID-19. You may be asked to wear a mask to protect yourself and those around you. Check your temperature twice a day for 14 days. Watch for COVID-19 symptoms such as cough, fever, and difficulty breathing.\r\nLearn more about COVID-19 and steps you can take to protect yourself and others on the CDC website.\r\n\r\nInformation about COVID-19 testing\r\n\r\nFor more information about testing for COVID-19, call your medical provider or visit your health department\u2019s website."
+        }
+      },
+      "msg17_t1": {
+        "type": "message",
+        "text": {
+          "eng": "Monitor for symptoms, wear a mask.\r\n\r\nWatch for COVID-19 symptoms. If you develop symptoms, call your occupational health provider as well as your healthcare provider, clinician advice line, or telemedicine provider. Since you work or volunteer in a healthcare facility, you may be asked to wear a mask to protect yourself and those around you.\r\n\r\nInformation about COVID-19 testing\r\n\r\nFor more information about testing for COVID-19, call your medical provider or visit your health department\u2019s website.",
+          "amh": "Monitor for symptoms, wear a mask.\r\n\r\nWatch for COVID-19 symptoms. If you develop symptoms, call your occupational health provider as well as your healthcare provider, clinician advice line, or telemedicine provider. Since you work or volunteer in a healthcare facility, you may be asked to wear a mask to protect yourself and those around you.\r\n\r\nInformation about COVID-19 testing\r\n\r\nFor more information about testing for COVID-19, call your medical provider or visit your health department\u2019s website.",
+          "orm": "Monitor for symptoms, wear a mask.\r\n\r\nWatch for COVID-19 symptoms. If you develop symptoms, call your occupational health provider as well as your healthcare provider, clinician advice line, or telemedicine provider. Since you work or volunteer in a healthcare facility, you may be asked to wear a mask to protect yourself and those around you.\r\n\r\nInformation about COVID-19 testing\r\n\r\nFor more information about testing for COVID-19, call your medical provider or visit your health department\u2019s website.",
+          "tig": "Monitor for symptoms, wear a mask.\r\n\r\nWatch for COVID-19 symptoms. If you develop symptoms, call your occupational health provider as well as your healthcare provider, clinician advice line, or telemedicine provider. Since you work or volunteer in a healthcare facility, you may be asked to wear a mask to protect yourself and those around you.\r\n\r\nInformation about COVID-19 testing\r\n\r\nFor more information about testing for COVID-19, call your medical provider or visit your health department\u2019s website."
+        }
+      },
+      "msg18_t0": {
+        "type": "message",
+        "text": {
+          "eng": "Monitor for symptoms, stay at home.\r\n\r\nStay home for 14 days and self-monitor. This includes checking your temperature twice a day and watching for symptoms. Practice social distancing. Maintain 6 feet of distance from others and stay out of crowded places. If possible, stay away from people who are at higher risk for getting very sick from COVID-19. Follow CDC guidance if symptoms develop.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "amh": "Monitor for symptoms, stay at home.\r\n\r\nStay home for 14 days and self-monitor. This includes checking your temperature twice a day and watching for symptoms. Practice social distancing. Maintain 6 feet of distance from others and stay out of crowded places. If possible, stay away from people who are at higher risk for getting very sick from COVID-19. Follow CDC guidance if symptoms develop.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "orm": "Monitor for symptoms, stay at home.\r\n\r\nStay home for 14 days and self-monitor. This includes checking your temperature twice a day and watching for symptoms. Practice social distancing. Maintain 6 feet of distance from others and stay out of crowded places. If possible, stay away from people who are at higher risk for getting very sick from COVID-19. Follow CDC guidance if symptoms develop.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "tig": "Monitor for symptoms, stay at home.\r\n\r\nStay home for 14 days and self-monitor. This includes checking your temperature twice a day and watching for symptoms. Practice social distancing. Maintain 6 feet of distance from others and stay out of crowded places. If possible, stay away from people who are at higher risk for getting very sick from COVID-19. Follow CDC guidance if symptoms develop.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again."
+        }
+      },
+      "msg18_14_t0": {
+        "type": "message",
+        "text": {
+          "eng": "Monitor for symptoms, stay at home.\r\n\r\nStay home for 14 days and self-monitor. This includes checking your temperature twice a day and watching for symptoms. Practice social distancing. Maintain 6 feet of distance from others and stay out of crowded places. If possible, stay away from people who are at higher risk for getting very sick from COVID-19. Follow CDC guidance if symptoms develop.\r\n\r\nIf you start to feel ill, contact a healthcare provider in the long-term care facility where you live.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "amh": "Monitor for symptoms, stay at home.\r\n\r\nStay home for 14 days and self-monitor. This includes checking your temperature twice a day and watching for symptoms. Practice social distancing. Maintain 6 feet of distance from others and stay out of crowded places. If possible, stay away from people who are at higher risk for getting very sick from COVID-19. Follow CDC guidance if symptoms develop.\r\n\r\nIf you start to feel ill, contact a healthcare provider in the long-term care facility where you live.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "orm": "Monitor for symptoms, stay at home.\r\n\r\nStay home for 14 days and self-monitor. This includes checking your temperature twice a day and watching for symptoms. Practice social distancing. Maintain 6 feet of distance from others and stay out of crowded places. If possible, stay away from people who are at higher risk for getting very sick from COVID-19. Follow CDC guidance if symptoms develop.\r\n\r\nIf you start to feel ill, contact a healthcare provider in the long-term care facility where you live.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again.",
+          "tig": "Monitor for symptoms, stay at home.\r\n\r\nStay home for 14 days and self-monitor. This includes checking your temperature twice a day and watching for symptoms. Practice social distancing. Maintain 6 feet of distance from others and stay out of crowded places. If possible, stay away from people who are at higher risk for getting very sick from COVID-19. Follow CDC guidance if symptoms develop.\r\n\r\nIf you start to feel ill, contact a healthcare provider in the long-term care facility where you live.\r\n\r\nNo COVID-19 testing needed at this time\r\n\r\nAs of now, your answers suggest you do not need to get tested for COVID-19. If anything changes, take the self-checker again."
+        }
+      }
+    }
+  ]
+}

@@ -3,15 +3,23 @@ import { createStore } from "redux"
 const initialState = {
     authenticated: false, 
     questions: [],
+    loading: false, 
     questionSelected: null, 
+    showSuccessToastMessage: false, 
     editActionDrawerVisible: false
 };
 
 const reducer = (state = initialState, action) => {
-    if (action.type === "LOAD_QUESTIONS") {
+  if (action.type === "LOAD_QUESTIONS") {
+    return {
+      ...state, 
+      loading: action.loading
+    }
+  } else if (action.type === "DONE_LOADING_QUESTIONS") {
       return {
         ...state, 
-        questions: action.allQuestions
+        questions: action.allQuestions, 
+        loading: action.loading
       };
     } else if (action.type === 'SELECT_QUESTION') {
       return {
@@ -43,10 +51,16 @@ const reducer = (state = initialState, action) => {
       };
       return {
           ...state, 
+          showSuccessToastMessage: action.showSuccessToastMessage, 
           questions: {
             ...updatedQuestion
           }
         }
+    } else if (action.type === "CLOSE_NOTIFICATION") {
+      return {
+        ...state, 
+        showSuccessToastMessage: action.showSuccessToastMessage
+      }
     }
     return state;
   }

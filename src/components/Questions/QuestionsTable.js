@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import firebase from "../../api/firebase/firestore";
-import connectEmulatorToApp from "../../api/firebase/connect";
 import { Table, Column } from 'react-rainbow-components';
+import getQuestions from "../../api/firebase/utils/getQuestions";
 
 const TableContainer = styled.section`
     justify-content: center;  
@@ -12,47 +11,28 @@ const TableContainer = styled.section`
     height: 600;
 `;
 TableContainer.displayName = "TableContainer";
-
 const tableContainerStyles = { height: 600 };
 
-const QuestionsTable = ({ dispatch }) => {
+const QuestionsTable = ({ dispatch, loading }) => {
   const [questions, setQuestions] = useState([]);
-
-  const getQuestions = () => {
-    const db = firebase.firestore();
-    connectEmulatorToApp(db); 
-
-    db // Fetch questions from firestore
-      .collection("questions")
-      .orderBy(firebase.firestore.FieldPath.documentId())
-      .onSnapshot(snapshot => {
-          let allQuestions = snapshot.docs.map(doc => ({
-              id: doc.id, 
-              ...doc.data()
-          }));
-          allQuestions = filterQuestions(allQuestions);
-          setQuestions(allQuestions);
-          dispatch({
-            type: 'LOAD_QUESTIONS',
-            allQuestions
-          });
-      });
-  }
 
   useEffect(() => {
     async function fetchData() {
-      return await getQuestions();
+      dispatch({
+        type: 'LOAD_QUESTIONS',
+        loading: true
+      });
+      const allQuestions = await getQuestions();
+      setQuestions(allQuestions);
+      dispatch({
+        type: 'DONE_LOADING_QUESTIONS', 
+        allQuestions, 
+        loading: false
+      });
     } 
     fetchData(); 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-
-  const filterQuestions = (questions) => {
-    return questions.filter((currQuestion) => {
-      return parseInt(currQuestion.id) > 0;
-    });
-  };
 
   const onSelect = (selectedRow) => {
     const rowNum = parseInt(Object.keys(selectedRow)[0]);
@@ -66,6 +46,7 @@ const QuestionsTable = ({ dispatch }) => {
   return (
     <TableContainer>
       <Table 
+        isLoading={loading}
         data={questions} 
         maxRowSelection={1}
         showCheckboxColumn={true}
@@ -84,6 +65,7 @@ const mapStateToProps = state => {
   return { 
     authenticated: state.authenticated,
     questions: state.questions,
+    loading: state.loading, 
     questionSelected: state.questionSelected
   }
 };
@@ -94,4 +76,7 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionsTable); 
+export default connect(
+  mapStateToProps, 
+  mapDispatchToProps
+)(QuestionsTable); 
