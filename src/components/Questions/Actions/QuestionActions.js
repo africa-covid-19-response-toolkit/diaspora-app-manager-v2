@@ -29,9 +29,15 @@ const QuestionActions = ({
 }) => {
 
     const filterActions = () => {
-        return Object.values(questionSelected.actions).map((currentActionKey) => {
-            return currentActionKey.text.eng;
-        })
+        if (questionSelected.multiple_choice) {
+            return Object.values(questionSelected.multiple_choice).map((currentMC) => {
+                return currentMC.text.eng;
+            })
+        } else {
+            return Object.values(questionSelected.actions).map((currentActionKey) => {
+                return currentActionKey.text.eng;
+            })
+        };
     };
 
     const onEdit = () => {
