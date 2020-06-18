@@ -40,10 +40,11 @@ const QuestionActions = ({
         };
     };
 
-    const onEdit = () => {
+    const onEdit = currentAction => {
         const { editTranslation } = DRAWER_CONFIG.DRAWER_TYPES;
         dispatch({
             type: 'EDIT_QUESTION_ACTION',
+            questionActionSelected: currentAction, 
             editDrawerType: editTranslation.type, 
             editDrawerVisible: true 
         });
@@ -64,7 +65,7 @@ const QuestionActions = ({
                             variant="border" 
                             size="small" 
                             style={buttonIconStyle}
-                            onClick={onEdit}
+                            onClick={() => onEdit(currentAction)}
                             icon={<FontAwesomeIcon icon={faPencilAlt} />} 
                         /> 
                     </PaddedContainer>

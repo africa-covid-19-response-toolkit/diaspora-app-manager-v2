@@ -61,7 +61,7 @@ const QuestionSummary = ({
     };
 
     const onEdit = (e) => {
-        const editedQuestion = e.target.value;
+        const editedQuestion = e ? e.target.value : "";
         setQuestion(editedQuestion);
     };
 
