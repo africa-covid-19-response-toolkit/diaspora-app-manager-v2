@@ -18,21 +18,19 @@ const EditTranslations = ({ questionActionSelected }) => {
             .EDIT_LANGUAGE_DRAWER_CONFIG
             .inputProps;
 
-    // TODO: Make questionActionSelected into object
-    // that contains all translated strings. Refrained 
-    // from this since no translations have been made.
+    const { eng, amh, orm, tig } = questionActionSelected;
     const [translations, setTranslations] = useState({
-        eng: questionActionSelected, 
-        arm: "", 
-        orm: "", 
-        tig: ""
+        eng,
+        amh,
+        orm, 
+        tig
     });
 
-    const onEdit = (e, key) => {
+    const onEdit = (key, e) => {
         const edit = e ? e.target.value : "";
         setTranslations({
             ...translations, 
-            key: edit
+            [key]: edit
         });
     };
 
@@ -46,7 +44,7 @@ const EditTranslations = ({ questionActionSelected }) => {
                         type={type}
                         label={label}
                         style={style}
-                        onChange={() => onEdit(key)}
+                        onChange={e => onEdit(key, e)}
                         className={className}
                         value={translations[key]}
                     />
