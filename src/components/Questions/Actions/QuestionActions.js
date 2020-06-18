@@ -31,11 +31,17 @@ const QuestionActions = ({
     const filterActions = () => {
         if (questionSelected.multiple_choice) {
             return Object.values(questionSelected.multiple_choice).map((currentMC) => {
-                return currentMC.text.eng;
+                return {
+                    english: currentMC.text.eng,
+                    allLangs: currentMC.text
+                };
             })
         } else {
             return Object.values(questionSelected.actions).map((currentActionKey) => {
-                return currentActionKey.text.eng;
+                return {
+                    english: currentActionKey.text.eng,
+                    allLangs: currentActionKey.text
+                };
             })
         };
     };
@@ -44,7 +50,7 @@ const QuestionActions = ({
         const { editTranslation } = DRAWER_CONFIG.DRAWER_TYPES;
         dispatch({
             type: 'EDIT_QUESTION_ACTION',
-            questionActionSelected: currentAction, 
+            questionActionSelected: currentAction.allLangs, 
             editDrawerType: editTranslation.type, 
             editDrawerVisible: true 
         });
@@ -56,12 +62,12 @@ const QuestionActions = ({
             return allActions.map((currentAction) => {
                 return(
                     <PaddedContainer 
-                        key={`${questionSelected.id}-${currentAction}`}
+                        key={`${questionSelected.id}-${currentAction.english}`}
                     >
-                         {currentAction}
+                         {currentAction.english}
                         <ButtonIcon 
-                            key={currentAction}
-                            title={currentAction}
+                            key={currentAction.english}
+                            title={currentAction.english}
                             variant="border" 
                             size="small" 
                             style={buttonIconStyle}
