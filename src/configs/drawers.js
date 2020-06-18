@@ -3,8 +3,7 @@ import EditTranslations from "../components/Questions/Actions/EditTranslations";
 import EditNextQuestionField from "../components/Questions/Actions/EditNextQuestionField";
 
 const INPUT_CONFIG = {
-    type: "text", 
-    style: { width: 300 }, 
+    type: "text",  
     className: "rainbow-p-around_medium"
 };
 
@@ -32,7 +31,8 @@ const EDIT_LANGUAGE_DRAWER_CONFIG = {
     },
     header: "Edit action",
     subheader: "Edit and translate the following actions.", 
-    slideFrom: "right"
+    slideFrom: "right", 
+    size: "small"
 };
 
 const TEXTAREA_CONFIG = {
@@ -47,12 +47,13 @@ const EDIT_NEXT_QUESTION_DRAWER_CONFIG = {
     }, 
     header: "Edit the next question", 
     subheader: "Edit the JSON logic used to retrieve the next question", 
-    slideFrom: "right"
+    slideFrom: "right", 
+    size: "small"
 };
 
 const DRAWER_TYPES = {
-    editLanguage: {
-        type: "editLanguage", 
+    editTranslation: {
+        type: "editTranslation", 
         content: <EditTranslations />
     },  
     editNextQuestion: {

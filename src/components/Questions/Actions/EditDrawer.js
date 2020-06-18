@@ -24,14 +24,14 @@ const EditDrawer = ({
     editDrawerType, 
     dispatch 
 }) => {
-    const { header, subheader, slideFrom } = DRAWER_CONFIG.EDIT_LANGUAGE_DRAWER_CONFIG;
+    const { header, subheader, slideFrom, size } = DRAWER_CONFIG.EDIT_LANGUAGE_DRAWER_CONFIG;
 
     const getDrawerContent = () => {
-        const { editLanguage, editNextQuestion } = DRAWER_CONFIG.DRAWER_TYPES;
+        const { editTranslation, editNextQuestion } = DRAWER_CONFIG.DRAWER_TYPES;
 
         switch (editDrawerType) {
-            case (editLanguage.type):
-                return editLanguage.content;
+            case (editTranslation.type):
+                return editTranslation.content;
             case (editNextQuestion.type): 
                 return editNextQuestion.content;
             default: 
@@ -80,6 +80,7 @@ const EditDrawer = ({
     return (
         <div className="rainbow-p-around_small rainbow-flex rainbow-flex_wrap  rainbow-align-content_center">
             <Drawer
+                size={size}
                 header={header}
                 slideFrom={slideFrom}
                 isOpen={editDrawerVisible}
