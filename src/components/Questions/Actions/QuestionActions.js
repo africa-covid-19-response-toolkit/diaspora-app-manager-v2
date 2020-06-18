@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import DRAWER_CONFIG from "../../../configs/drawers";
 import { ButtonIcon } from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
@@ -24,8 +25,7 @@ const PaddedContainer = styled.div`
 
 const QuestionActions = ({ 
     questionSelected, 
-    dispatch, 
-    editActionDrawerVisible 
+    dispatch
 }) => {
 
     const filterActions = () => {
@@ -41,9 +41,11 @@ const QuestionActions = ({
     };
 
     const onEdit = () => {
+        const { editLanguage } = DRAWER_CONFIG.DRAWER_TYPES;
         dispatch({
             type: 'EDIT_QUESTION_ACTION',
-            editActionDrawerVisible: true 
+            editDrawerType: editLanguage.type, 
+            editDrawerVisible: true 
         });
     };
 
@@ -82,8 +84,7 @@ const mapStateToProps = state => {
     return { 
       authenticated: state.authenticated,
       questions: state.questions,
-      questionSelected: state.questionSelected, 
-      editActionDrawerVisible: state.editActionDrawerVisible
+      questionSelected: state.questionSelected
     }
 };
 

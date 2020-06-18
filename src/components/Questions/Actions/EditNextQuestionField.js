@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Textarea } from 'react-rainbow-components';
 
 const containerStyles = {
@@ -22,4 +23,10 @@ const EditNextQuestionField = ({ questionSelected }) => {
     );
 };
 
-export default EditNextQuestionField;
+const mapStateToProps = state => {
+    return { 
+      questionSelected: state.questionSelected
+    }
+};
+
+export default connect(mapStateToProps)(EditNextQuestionField);
