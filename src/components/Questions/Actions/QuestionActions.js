@@ -41,10 +41,10 @@ const QuestionActions = ({
     };
 
     const onEdit = () => {
-        const { editLanguage } = DRAWER_CONFIG.DRAWER_TYPES;
+        const { editTranslation } = DRAWER_CONFIG.DRAWER_TYPES;
         dispatch({
             type: 'EDIT_QUESTION_ACTION',
-            editDrawerType: editLanguage.type, 
+            editDrawerType: editTranslation.type, 
             editDrawerVisible: true 
         });
     };

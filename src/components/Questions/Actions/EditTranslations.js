@@ -1,6 +1,15 @@
 import React from "react";
+import styled from "styled-components";
 import DRAWER_CONFIG from "../../../configs/drawers";
 import { Input } from "react-rainbow-components";
+
+const FormContainer = styled.form`
+    margin-top: 2.0vh;
+    div > label {
+        align-self: flex-start;
+        padding-left: 1.0vh;
+    }
+`;
 
 const EditTranslations = () => {
     const { labels } = DRAWER_CONFIG.EDIT_LANGUAGE_DRAWER_CONFIG;
@@ -9,7 +18,7 @@ const EditTranslations = () => {
             .inputProps;
 
     return(
-        <form key="edit-translations-form">
+        <FormContainer key="edit-translations-form">
             {Object.keys(labels).map((currentLanguage) => {
                 const {label, key } = labels[currentLanguage];
                 return ( 
@@ -22,7 +31,7 @@ const EditTranslations = () => {
                     />
                 )
             })}
-        </form>
+        </FormContainer>
     );
 };
 
