@@ -6,7 +6,8 @@ const initialState = {
     loading: false, 
     questionSelected: null, 
     showSuccessToastMessage: false, 
-    editActionDrawerVisible: false
+    editDrawerType: "", 
+    editDrawerVisible: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -32,17 +33,20 @@ const reducer = (state = initialState, action) => {
     } else if (action.type === 'EDIT_QUESTION_ACTION') {
       return {
           ...state, 
-          editActionDrawerVisible: action.editActionDrawerVisible
+          editDrawerType: action.editDrawerType, 
+          editDrawerVisible: action.editDrawerVisible
         }
     } else if (action.type === 'DISMISS_EDIT_ACTION_DRAWER') {
       return {
           ...state, 
-          editActionDrawerVisible: action.editActionDrawerVisible
+          editDrawerVisible: action.editDrawerVisible, 
+          editDrawerType: ""
         }
     } else if (action.type === 'SAVE_EDIT_ACTION_DRAWER') {
       return {
           ...state, 
-          editActionDrawerVisible: action.editActionDrawerVisible
+          editDrawerVisible: action.editDrawerVisible,
+          editDrawerType: ""
         }
     } else if (action.type === 'SAVE_EDIT') {
       const { questions } = state;

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Application, Notification } from 'react-rainbow-components';
 import QuestionSummary from "./EditQuestionCard";
 import QuestionsTable from "./QuestionsTable";
-import EditActionDrawer from "./Actions/EditActionDrawer";
+import EditDrawer from "./Actions/EditDrawer";
 import styled from "styled-components";
 
 const QuestionsContainer = styled(Application)`
@@ -27,7 +27,7 @@ const Questions = ({ showSuccessToastMessage }) => {
               icon="success"
           />
         }
-        <EditActionDrawer />
+        <EditDrawer />
         <QuestionSummary />
         <QuestionsTable />
       </QuestionsContainer>
