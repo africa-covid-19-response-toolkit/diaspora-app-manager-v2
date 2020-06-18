@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import Rainbow from "../../assets/Rainbow.svg";
 import QuestionActions from "./Actions/QuestionActions";
+import EditNextQuestionField from "./Actions/EditNextQuestionField";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Card, Button, Input } from 'react-rainbow-components';
 import { faTasks } from '@fortawesome/free-solid-svg-icons';
@@ -99,6 +100,7 @@ const QuestionSummary = ({
                     />
                 </section>
                 <QuestionActions />
+                <EditNextQuestionField questionSelected={questionSelected} />
             </Fragment>
         )
     };
