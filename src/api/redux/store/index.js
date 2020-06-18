@@ -5,6 +5,7 @@ const initialState = {
     questions: [],
     loading: false, 
     questionSelected: null, 
+    questionActionSelected: null, 
     showSuccessToastMessage: false, 
     editDrawerType: "", 
     editDrawerVisible: false
@@ -34,7 +35,8 @@ const reducer = (state = initialState, action) => {
       return {
           ...state, 
           editDrawerType: action.editDrawerType, 
-          editDrawerVisible: action.editDrawerVisible
+          editDrawerVisible: action.editDrawerVisible, 
+          questionActionSelected: action.questionActionSelected
         }
     } else if (action.type === 'DISMISS_EDIT_ACTION_DRAWER') {
       return {

@@ -11,19 +11,19 @@ const EDIT_LANGUAGE_DRAWER_CONFIG = {
     labels: {
         ENGLISH: {
             label: "English", 
-            key: "english"
+            key: "eng"
         }, 
         AMHARIC: {
             label: "Amharic", 
-            key: "amharic"
+            key: "amh"
         }, 
         OROMO: {
             label: "Oromo", 
-            key: "oromo"
+            key: "orm"
         }, 
         TIGRINYA: {
             label: "Tigrinya", 
-            key: "tigrinya"
+            key: "tig"
         }, 
     },
     inputProps: {
